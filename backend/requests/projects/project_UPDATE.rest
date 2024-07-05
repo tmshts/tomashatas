@@ -1,0 +1,14 @@
+PUT http://localhost:3003/api/projects/2
+Content-Type: application/json
+
+{
+    "title": "TDP generator",
+    "source": "https://tmshts.github.io/tdpgenerator",
+    "introduction": "This website was created for the purpose of my master thesis at the Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). The name of the thesis is Developing a Modelling Language for Team Design Patterns to Represent Human-Agent Collaboration. This provides an user-agnostic modelling language to describe Human-Agent Collaboration to facilitate the comprehension for diverse user groups.",
+    "about": "The website displays certain questions. After answering these questions, a corresponding Team Design Pattern to represent Human-Agent Collaboration is generated.",
+    "implementation": "The frontend is built with JavaScript, CSS and HTML",
+    "tools_frontend": ["JavaScript", "CSS", "HTML"],
+    "tools_backend": [],
+    "url": "",
+    "likes": 0
+}

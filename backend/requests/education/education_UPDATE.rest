@@ -1,0 +1,12 @@
+PUT http://localhost:3003/api/education/6
+Content-Type: application/json
+
+{
+    "name": "Vienna University of Economics and Business",
+    "city": "Vienna",
+    "country": "Austria",
+    "grade": "Exchange Program in the faculty of Economics",
+    "timeframe": "Sep 2012 – Feb 2013",
+    "courses": [
+    ]
+}

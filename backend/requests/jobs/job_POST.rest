@@ -1,0 +1,14 @@
+POST http://localhost:3003/api/jobs
+Content-Type: application/json
+
+{
+    "company": "PricewaterhouseCoopers",
+    "city": "Katowice",
+    "country": "Poland",
+    "position": "Process Specialist",
+    "timeframe": "Oct 2014 – Nov 2014",
+    "tasks": [
+        "reviewing financial statements (statutory and IFRS) and analyzing financial data"
+    ],
+    "aptitudes": "MS Excel"
+}

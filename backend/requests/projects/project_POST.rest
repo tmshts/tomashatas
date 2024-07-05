@@ -1,0 +1,14 @@
+POST http://localhost:3003/api/projects
+Content-Type: application/json
+
+{
+    "title": "Christmas Sweet",
+    "introduction": "This website serves as a platform where you can view Czech Christmas Sweet and order it in Mexico City.",
+    "source": "https://github.com/tmshts/christmas_sweet",
+    "about": "Christmas sweet website is a kind of online platform concerning typical Czech Christmas sweet. An user landing on the webpage is able to view the Christmas sweet and make an order. This platform was made for Mexico City.",    
+    "implementation": "The frontend is built with React. Docker image was built from a Dockerfile and then was run in order to create an instance of a container. The website was then deployed on Fly.io",
+    "tools_frontend": ["React", "Styled-components", "ESLint"],
+    "tools_backend": ["Docker", "Fly.io"],
+    "url": "https://galletaschecas.fly.dev",
+    "likes": 0
+}
