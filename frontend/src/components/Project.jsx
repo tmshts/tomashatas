@@ -36,6 +36,10 @@ import {
     Link
   } from 'react-router-dom'
 
+import { useRef } from 'react';
+import Navbar from './Nav_project/Navbar'
+import ScrollToTop from './ScrollToTop'
+
 const CommentButton = styled.button`
     color: #BF4F74;
     font-size: 1em;
@@ -67,13 +71,13 @@ const Input = styled.input`
         box-shadow: 0px 0px 5px #BF4F74;
 }`
 
-const padding = {
+const link_style = {
     color: "white",
     fontSize: 18,
     textDecoration: "none",
   }
 
-  const chain = {
+  const link_and_navbar_style = {
     backgroundColor: '#00A693',
     borderRadius: 10,
     marginTop: 5,
@@ -82,6 +86,7 @@ const padding = {
     paddingTop: 15,
     paddingBottom: 15,
     color: 'white',
+    display: 'flex',
   }
 
 
@@ -100,6 +105,12 @@ const Project = () => {
             project.ID === parseInt(id)
         )
     })
+
+    const about_ref = useRef(null);
+    const introduction_ref = useRef(null);
+    const implementation_ref = useRef(null);
+    const comments_ref = useRef(null);
+
 
     const [comment, setComment] = useState('')
 
@@ -145,17 +156,21 @@ const Project = () => {
 
         <div>
             
-                <div style={chain}>
-                    <Link style={padding} to="/projects">Projects</Link> <span className="chevron right"></span> <span>{project.title}</span>
+                <div style={link_and_navbar_style}>
+                    <Link style={link_style} to="/projects">Projects</Link> <span className="chevron right"></span> <span>{project.title}</span>
+                    
+                    <Navbar about_ref={about_ref} introduction_ref={introduction_ref}
+                    implementation_ref={implementation_ref} comments_ref={comments_ref} />
                 </div>
+
 
                 <h1 className='headline_1'>{project.title}</h1>
                     
                 <p>Source code / video can be found: <a href={project.source} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>
                 {project.url && <p>More information about the project can be found: <a href={project.url} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>}
 
-                <h3 className='project_h4_center'>Introduction</h3>
-                <p>{project.introduction}</p>
+                <h3 ref={about_ref}  className='project_h4_center'>About</h3>
+                <p>{project.about}</p>
 
                 <div className='project_foto_container'>
                     {project.ID == 5 && <img src={Christmas_sweet_home} className='project_foto' alt="Christmas_sweet_home"/> }
@@ -166,8 +181,8 @@ const Project = () => {
                 </div>
 
 
-                <h3 className='project_h4_center'>About</h3>
-                <p>{project.about}</p>
+                <h3 ref={introduction_ref} className='project_h4_center'>Introduction</h3>
+                <p>{project.introduction}</p>
 
                 <div className='project_foto_container'>
                     {project.ID == 5 && <img src={Christmas_sweet_ingredientes} className='project_foto' alt="Christmas_sweet_ingredientes"/> }
@@ -189,7 +204,7 @@ const Project = () => {
                     {project.ID == 5 && <img src={Christmas_sweet_mobile_burger} className='project_foto_mobile' alt="Christmas_sweet_mobile_burger"/> }
                 </div>
 
-                <h3 className='project_h4_center'>Implementation</h3>
+                <h3 ref={implementation_ref} className='project_h4_center'>Implementation</h3>
                 <p>{project.implementation}</p>
 
                 <h3 className='project_h4_center'>Front-End</h3>
@@ -217,7 +232,7 @@ const Project = () => {
                 <Notification />
                 <ErrorMessage />
 
-                <h3>Comments / Suggestions:</h3>
+                <h3 ref={comments_ref}>Comments / Suggestions:</h3>
                 <form onSubmit={addComment}>
                         <Input
                             onChange={handleComment}
@@ -241,6 +256,9 @@ const Project = () => {
                     )
 
                 })}
+
+                <ScrollToTop />
+
 
         </div>
     )

@@ -42,8 +42,6 @@ const gym_ref = useRef(null);
                                     {project.title}
                                 </h2>
 
-                                <br />
-
                                 <div className='project_image'>
                                     {project.ID == 1 && <img ref={blog_ref} src={Blog_blogs} className='project_foto_mini' alt="Blog_blogs"/> }
                                     {project.ID == 2 && <img ref={master_paper_ref} src={Master_paper_home} className='project_foto_mini' alt="Master_paper_home"/> }

@@ -58,12 +58,12 @@ const padding_footer = {
   fontWeight: 'bold'
 }
 
-const padding_footer_projects = {
+const style_footer_projects = {
   paddingTop: 8,
   paddingLeft: 30,
 }
 
-const padding_footer_projects_links = {
+const style_footer_projects_links = {
   color: "black",
   textDecoration: "none",
 }
@@ -120,9 +120,9 @@ function App() {
 
 
                 {projects.map(project =>
-                <div key={project.ID} style={padding_footer_projects}>
+                <div key={project.ID} style={style_footer_projects}>
 
-                        <Link style={padding_footer_projects_links} to={`/projects/${project.ID}`}>
+                        <Link style={style_footer_projects_links} to={`/projects/${project.ID}`}>
                               <b>
                                   {project.title}
                               </b>
