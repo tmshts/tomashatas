@@ -42,13 +42,11 @@ const Cv = ({ jobs, education }) => {
 
                             <div id='intro_first'>
                                     <p><b>Name:</b></p>
-                                    <p><b>Phone:</b></p>
                                     <p><b>Email:</b></p>
                             </div>
 
                             <div id='intro_second'>
                                 <p>Tomas Hatas</p>
-                                <p>+420 732 964 320</p>
                                 <p>tomhatas@gmail.com</p>
                             </div>
                         </div>

@@ -108,13 +108,16 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         cursor: 'pointer',
         border: 'solid white 2px',
         borderRadius: '10px',
-        backgroundColor: '#83677B'
+        backgroundColor: '#83677B',
+        width: '60px'
+
     };
 
     const center_view_project_style = {
         position: 'absolute',
         top: '48%',
         left: '45%',
+        textAlign: 'center',
       }
 
     const goToSlide = slideIndex => {
@@ -160,7 +163,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
 
                 <div style={center_view_project_style}>
                     <div style={view_project_style}>
-                        View
+                        More info
                     </div>
                 </div>
 

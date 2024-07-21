@@ -6,6 +6,12 @@ import Real_estate_overview_foto from '../assets/3_Real_estate_overview.png'
 import Gym_search_foto from '../assets/4_Gym_update.png'
 import Christmas_sweet_home_foto from '../assets/5_Christmas_sweet_home.png'
 
+
+import Home_picture from './Home_picture'
+
+import main_picture from '../assets/main_picture.jpeg'
+
+
 const Home = () => {
 
     const projects_fotos = [
@@ -37,7 +43,13 @@ const Home = () => {
     */
     return (
         <>
-            <div>Hello from Home</div>
+
+            <Home_picture foto={main_picture} />  
+
+
+            <h2 style={{textAlign: 'center'}}>
+                My projects
+            </h2>
 
             <div style={containerStyle}>
                 <ImageSlider projects_fotos={projects_fotos} parentWidth={1500} />  

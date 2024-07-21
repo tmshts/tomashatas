@@ -149,7 +149,7 @@
 
 #intro_wrapper {
   display: flex;
-  margin-top: 35px;
+  margin-top: 55px;
 }
 
 .main_picture {
@@ -213,7 +213,30 @@
     text-align: right;
   }
 
+}
 
+.home_picture_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.home_welcome_picture {
+  margin-top: 20px;
+}
+
+.home_welcome_text_down {
+  margin-bottom: 30px;
+  font-family: 'Bodoni-Poster';
+  font-weight: bold;
+  font-size: 220%;
+  text-align: center;
+}
+
+.foto_home {
+  border-radius: 50px;
 }
 
 #intro_second {
