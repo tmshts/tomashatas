@@ -176,6 +176,14 @@
   gap: 70px;
 }
 
+.home_contact_me_text {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
 @media (max-width: 768px) {
   .cv {
     margin-top: 45px;
@@ -211,7 +219,6 @@
   }
   #intro_wrapper {
     margin-top: 0px;
-    margin-top: 20px;
   }
   .main_picture {
     border-radius: 8px;
@@ -250,8 +257,9 @@
   margin-top: 80px;
 }
 
-.home_about_me_text, .home_contact_me_text {
+.home_about_me_text {
   margin-left: 10px;
+  line-height: 1.8;
 }
 
 #intro_second {
@@ -262,18 +270,17 @@
 .motto {
   padding-top: 10px;
   padding-bottom: 10px;
+  line-height: 1.8;
 }
 
 .company {
   font-size: larger;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
 .job {
   font-size: large;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 .aptitudes {
@@ -298,15 +305,19 @@
 }
 
 .list_it_aptitudes li {
-  margin-bottom: 10px;
+  line-height: 1.8;
 }
 
 .list_languages li {
-  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.line_height {
+  line-height: 1.8;
 }
 
 .list_tasks li {
-  margin-bottom: 10px;
+  line-height: 1.8;
 }
 
 .projects_container {

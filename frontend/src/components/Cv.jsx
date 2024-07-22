@@ -84,9 +84,9 @@ const Cv = ({ jobs, education }) => {
 
                     <h2 ref={certificates_ref} >Certificates</h2>
 
-                    <p>
+                    <div className='line_height'>
                         <b>Full Stack Open from University of Helsinki </b> (React, Node.js, Express, REST API, MongoDB)
-                    </p>
+                    </div>
                     <p>
                         <i>More info about the certificate:</i><span> </span>
                         <a href="https://fullstackopen.com/en/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
@@ -94,7 +94,7 @@ const Cv = ({ jobs, education }) => {
                     
                     <img src={fullstack} className='certificate' alt='fullstack'/>
                     
-                    <p>
+                    <p className='line_height'>
                         <b>CS50’s Web Programming with Python and JavaScript from Harvard</b> (Django)
                     </p>
                     <p>

@@ -6,10 +6,10 @@ const Job = ({ jobs }) => {
       <>
             {jobs.map(job => (
                 <div key={job.ID}>
-                    <div className="company">{job.company}, {job.city}, {job.country}</div>
+                    <div className="company line_height">{job.company}, {job.city}, {job.country}</div>
 
                     <div>
-                        <div className="job"><i>{job.position}</i></div>
+                        <div className="job line_height"><i>{job.position}</i></div>
                     </div>
 
                     <div>

@@ -8,6 +8,8 @@ import Real_estate_overview_foto from '../assets/3_Real_estate_overview.png'
 import Gym_search_foto from '../assets/4_Gym_update.png'
 import Christmas_sweet_home_foto from '../assets/5_Christmas_sweet_home.png'
 
+import { SocialIcon } from 'react-social-icons'
+
 
 const Home = () => {
 
@@ -64,16 +66,16 @@ const Home = () => {
             </h1>
 
             <div className='home_about_me_text'>
-                I was born in Decin, Czech Republic. After studying the European Business Academy in Decin, I kept going on in the business field
-                and hence I started studying at the University of Economics in Prague. After graduating, I was working above all in Germany.
+                After studying and working in business and with the growing technological advancements around the world,
+                I was eager to explore different fields such as machine learning, web and software development.
             </div>
+
+            <br />
 
             <div className='home_about_me_text'>
-                Nevertheless, aware of technological advances, I swift my carrer into technological world.
-                I could have not made better decision. I was eager to discover various fields such as machine learning, web and software development
-                learning programming/script languages: C, Python, Java, JavaScript, React, etc.
+                Therefore, I started my Master's in Information Systems where I learned programming/scripting languages such as:
+                C, Python, Java, JavaScript, React, etc. I couldn't have made a better decision.
             </div>
-
             
             {/* Home Contact Me */}
 
@@ -82,7 +84,31 @@ const Home = () => {
             </h1>
 
             <div className='home_contact_me_text'>
-                My WhatsApp
+
+                <div>
+                    <SocialIcon url='https://whatsapp.com' href="https://wa.me/420732964320" target="_blank" rel="noopener noreferrer"/>
+                </div>
+
+                <div>
+                    <SocialIcon url='mailto:tomhatas@gmail.com' target="_blank" rel="noopener noreferrer"/>
+                </div>
+
+                <div>
+                    <SocialIcon url="https://linkedin.com/in/tomas-hatas" target="_blank" rel="noopener noreferrer"/>
+                </div>
+
+                <div>
+                    <SocialIcon url="https://instagram.com/tmshts" target="_blank" rel="noopener noreferrer"/>
+                </div>
+
+                <div>
+                    <SocialIcon url="https://github.com/tmshts" target="_blank" rel="noopener noreferrer"/>
+                </div>
+
+                <div>
+                    <SocialIcon url="https://www.youtube.com/@tmshts" target="_blank" rel="noopener noreferrer"/>
+                </div>
+
             </div>
 
         </>
