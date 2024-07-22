@@ -12,7 +12,7 @@ const projectSlice = createSlice({
     addVote(state, action) {
       const updatedProject = action.payload
       return state.map(project =>
-        project.id !== updatedProject.id ? project : updatedProject 
+        project.id !== updatedProject.id ? project : updatedProject
       )
     },
     updateProjectsAfterComment(state, action) {
@@ -26,8 +26,8 @@ const projectSlice = createSlice({
         ...comment,
         content: comment.content,
         id: comment.id,
-        }
-      
+      }
+
       const updated_comments = the_project.comments.concat(updated_comment)
 
       const updated_project = {
@@ -37,9 +37,9 @@ const projectSlice = createSlice({
 
       return [ ...state.map(project => {
         return (
-          project.id !== updated_project.id ? project : updated_project 
+          project.id !== updated_project.id ? project : updated_project
         )
-        })]
+      })]
     },
     setProjects(state, action) {
       return action.payload
@@ -61,16 +61,16 @@ export const initializeProjects = () => {
 }
 
 export const createComment = (content) => {
-      const { comment, project_id } = content
-      return async dispatch => {
-        try {
-          const returnedComment = await projectService.addComment(content, project_id)
-          dispatch(updateProjectsAfterComment(returnedComment))
-          dispatch(setNotification(`You have just added the comment "${comment}". Thank you.`, 5))
-        } catch (exception) {
-          dispatch(setErrorMessage(`Comment "${comment}" can not be added`, 5))
-        }
-      }
+  const { comment, project_id } = content
+  return async dispatch => {
+    try {
+      const returnedComment = await projectService.addComment(content, project_id)
+      dispatch(updateProjectsAfterComment(returnedComment))
+      dispatch(setNotification(`You have just added the comment '${comment}'. Thank you.`, 5))
+    } catch (exception) {
+      dispatch(setErrorMessage(`Comment '${comment}' can not be added`, 5))
+    }
+  }
 }
 
 export const increaseVotes = (project) => {
@@ -78,20 +78,21 @@ export const increaseVotes = (project) => {
     try {
       const updatedProject = await projectService.updateVotes(project)
       const comments = await projectService.getAllComments(updatedProject.ID)
-      if(comments.error_message == "no comments") {
-          dispatch(addVote({
-            ...updatedProject,
-          }))
+      if(comments.error_message === 'no comments') {
+        dispatch(addVote({
+          ...updatedProject,
+        }))
       }
       else {
-          dispatch(addVote({
-            ...updatedProject,
+        dispatch(addVote({
+          ...updatedProject,
           comments: comments
-          }))
+        }))
       }
+      // eslint-disable-next-line @stylistic/js/quotes
       dispatch(setNotification(`You have just liked this project. Thank you.`, 5))
     } catch (e) {
-      dispatch(setErrorMessage(`A vote for project "${project.title}" can not be made`, 5))
+      dispatch(setErrorMessage(`A vote for project '${project.title}' can not be made`, 5))
     }
   }
 }

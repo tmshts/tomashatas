@@ -154,7 +154,6 @@
 
 .main_picture {
   border-radius: 8px;
-  border: solid 1px;
   width: 180px;
   height: auto;
   margin-top: 5px;
@@ -215,7 +214,6 @@
   }
   .main_picture {
     border-radius: 8px;
-    border: solid 1px;
     max-width: 70%;
     height: auto;
   }
