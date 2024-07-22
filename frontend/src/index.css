@@ -75,7 +75,7 @@
   border: 0;
   width: 70%;
   border-top: 2px solid #00A693;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .click_projects {
@@ -107,6 +107,7 @@
 
 .project_name {
   text-align: center;
+  margin-top: 40px;
 }
 
 .project_image {
@@ -244,9 +245,13 @@
   border-radius: 200px;
 }
 
-.home_about_me, .home_contact_me {
+.home_about_me_headline, .home_contact_me_headline {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 80px;
+}
+
+.home_about_me_text, .home_contact_me_text {
+  margin-left: 10px;
 }
 
 #intro_second {
