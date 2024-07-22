@@ -84,6 +84,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         display: 'flex',
         justifyContent: 'center',
         transform: 'translate(0, -100%)',
+        marginTop: '35px'
     };
     
     const dotStyles = {
@@ -109,14 +110,16 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         border: 'solid white 2px',
         borderRadius: '10px',
         backgroundColor: '#83677B',
-        width: '60px'
+        width: '100px'
 
     };
 
     const center_view_project_style = {
-        position: 'absolute',
-        top: '48%',
-        left: '45%',
+        display: 'flex',
+        justifyContent: 'center',
+        //position: 'absolute',
+        //left: '45%',
+        marginTop: '-35px',
         textAlign: 'center',
       }
 
@@ -169,13 +172,13 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
 
             </Link>
 
-                <div style={dotsContainerStyles}>
-                    {projects_fotos.map((slide, slideIndex) => (
-                    <div key={slideIndex} style={dotStyles} onClick={() => goToSlide(slideIndex)} >⬤</div> 
-                    )
-                    )}
-                </div>
+            </div>
 
+            <div style={dotsContainerStyles}>
+                {projects_fotos.map((slide, slideIndex) => (
+                <div key={slideIndex} style={dotStyles} onClick={() => goToSlide(slideIndex)} >⬤</div> 
+                )
+                )}
             </div>
 
         </div>

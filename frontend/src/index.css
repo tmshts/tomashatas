@@ -168,6 +168,14 @@
   margin-top: 5px;
 }
 
+.home_picture_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
 @media (max-width: 768px) {
   .cv {
     margin-top: 45px;
@@ -184,6 +192,14 @@
     border-radius: 8px;
     border: solid 1px;
     width: 100%;
+  }
+  .home_picture_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
   }
 }
 
@@ -215,20 +231,11 @@
 
 }
 
-.home_picture_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
 .home_welcome_picture {
   margin-top: 20px;
 }
 
 .home_welcome_text_down {
-  margin-bottom: 30px;
   font-family: 'Bodoni-Poster';
   font-weight: bold;
   font-size: 220%;
@@ -236,7 +243,12 @@
 }
 
 .foto_home {
-  border-radius: 50px;
+  border-radius: 200px;
+}
+
+.home_about_me, .home_contact_me {
+  text-align: center;
+  margin-top: 60px;
 }
 
 #intro_second {
