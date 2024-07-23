@@ -1,3 +1,7 @@
+body {
+  background-color: #F5F5F5;
+}
+
 .notification {
   color: green;
   background: lightgrey;
@@ -242,9 +246,9 @@
 }
 
 .home_welcome_text_down {
-  font-family: 'Bodoni-Poster';
+  font-family: 'Brush Script MT';
   font-weight: bold;
-  font-size: 220%;
+  font-size: 300%;
   text-align: center;
 }
 
@@ -252,9 +256,14 @@
   border-radius: 200px;
 }
 
-.home_about_me_headline, .home_contact_me_headline {
+.home_about_me_headline {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 70px;
+}
+
+.home_contact_me_headline {
+  text-align: center;
+  margin-top: 40px;
 }
 
 .home_about_me_text {

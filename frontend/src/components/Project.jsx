@@ -167,10 +167,10 @@ const Project = () => {
                 <h1 className='headline_1'>{project.title}</h1>
                     
                 <p>Source code / video can be found: <a href={project.source} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>
-                {project.url && <p>More information about the project can be found: <a href={project.url} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>}
+                {project.url && <p className='line_height'>More information about the project can be found: <a href={project.url} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>}
 
                 <h3 ref={about_ref}  className='project_h4_center'>About</h3>
-                <p>{project.about}</p>
+                <p className='line_height'>{project.about}</p>
 
                 <div className='project_foto_container'>
                     {project.ID == 5 && <img src={Christmas_sweet_home} className='project_foto' alt="Christmas_sweet_home"/> }
@@ -182,7 +182,7 @@ const Project = () => {
 
 
                 <h3 ref={introduction_ref} className='project_h4_center'>Introduction</h3>
-                <p>{project.introduction}</p>
+                <p className='line_height'>{project.introduction}</p>
 
                 <div className='project_foto_container'>
                     {project.ID == 5 && <img src={Christmas_sweet_ingredientes} className='project_foto' alt="Christmas_sweet_ingredientes"/> }
@@ -205,17 +205,17 @@ const Project = () => {
                 </div>
 
                 <h3 ref={implementation_ref} className='project_h4_center'>Implementation</h3>
-                <p>{project.implementation}</p>
+                <p className='line_height'>{project.implementation}</p>
 
                 <h3 className='project_h4_center'>Front-End</h3>
-                <ul className="list_frontend_backend">
+                <ul className="list_frontend_backend line_height">
                         {project.tools_frontend.map(tool => (
                             <li key={tool}>{tool}</li>
                         ))}
                 </ul>
 
                 <h3 className='project_h4_center'>Back-End</h3>
-                <ul className="list_frontend_backend">
+                <ul className="list_frontend_backend line_height">
                         {project.tools_backend.map(tool => (
                             <li key={tool}>{tool}</li>
                         ))}
