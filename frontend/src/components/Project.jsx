@@ -119,7 +119,7 @@ const Project = () => {
     if (!project) { 
         return (
             <div className='sorry_no_project'>
-                Sorry, the project with {id} does not exist.
+                Sorry, the project with id {id} does not exist.
             </div>
         )
     }
