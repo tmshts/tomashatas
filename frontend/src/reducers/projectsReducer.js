@@ -11,6 +11,7 @@ const projectSlice = createSlice({
   reducers: {
     addVote(state, action) {
       const updatedProject = action.payload
+      console.log(updatedProject)
       return state.map(project =>
         project.id !== updatedProject.id ? project : updatedProject
       )
@@ -79,6 +80,7 @@ export const increaseVotes = (project) => {
       const updatedProject = await projectService.updateVotes(project)
       const comments = await projectService.getAllComments(updatedProject.ID)
       if(comments.error_message === 'no comments') {
+        console.log('hey')
         dispatch(addVote({
           ...updatedProject,
         }))

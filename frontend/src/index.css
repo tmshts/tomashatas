@@ -135,7 +135,7 @@ body {
 
 .ul_no_bullets {
   list-style-type: none; /* Remove bullets */
-  border-left: solid 2px #00A693;
+  border-left: solid 2px #A52A2A;
   padding-left: 10px;
   margin-left: 30px;
   margin-bottom: 30px;
@@ -341,4 +341,9 @@ body {
 
 .headline_1 {
   text-align: center;
+}
+
+.sorry_no_project {
+  margin-top: 20px;
+  font-weight: bolder;
 }

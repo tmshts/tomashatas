@@ -118,7 +118,7 @@ const Project = () => {
     
     if (!project) { 
         return (
-            <div>
+            <div className='sorry_no_project'>
                 Sorry, the project with {id} does not exist.
             </div>
         )
@@ -245,16 +245,22 @@ const Project = () => {
                     
                 </form>
         
+                
                 {project.comments.map((comment) => {
 
-                    return (
-                        <div key={comment.id}>
-                        <ul className='ul_no_bullets'>
-                            <li className='li_content'><b>{comment.content}</b></li>
-                            <i>Created: {comment.createdAt.slice(8,10)}. {comment.createdAt.slice(5,7)}. {comment.createdAt.slice(0,4)}</i>
-                        </ul>
-                        </div>
-                    )
+                    if (project.comments.length !== 0 ) {
+                        return (
+                        
+                            <div key={comment.id}>
+                            <ul className='ul_no_bullets'>
+                                <li className='li_content'><b>{comment.content}</b></li>
+                                <i>Created: {comment.createdAt.slice(8,10)}. {comment.createdAt.slice(5,7)}. {comment.createdAt.slice(0,4)}</i>
+                            </ul>
+                            </div>
+                        )
+                    }
+
+
 
                 })}
 
