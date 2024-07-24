@@ -1,5 +1,5 @@
 body {
-  background-color: #F5F5F5;
+  background-color: #fffbef;
 }
 
 .notification {
@@ -53,7 +53,10 @@ body {
 
 .hr_cv, .hr_project {
   border: 0;
-  border-top: 2px solid #00A693;
+  border-top: 2px solid #eee0b9;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70%;
 }
 
 .chevron::before {
@@ -78,7 +81,7 @@ body {
 .hr_projects {
   border: 0;
   width: 70%;
-  border-top: 2px solid #00A693;
+  border-top: 2px solid #eee0b9;
   margin-top: 50px;
 }
 
@@ -91,13 +94,13 @@ body {
 
 .project_foto {
   border-radius: 8px;
-  border: solid 1px;
+  border: solid 1px #eee0b9;
   width: 90%;
 }
 
 .project_foto_mobile {
   border-radius: 8px;
-  border: solid 1px;
+  border: solid 1px #eee0b9;
   width: 35%;
 }
 
@@ -120,7 +123,7 @@ body {
 
 .project_foto_mini {
   border-radius: 8px;
-  border: solid 1px;
+  border: solid 1px #eee0b9;
   width: 90%;
   scroll-margin-top: 100px;
 }
@@ -166,7 +169,7 @@ body {
 
 .certificate {
   border-radius: 8px;
-  border: solid 1px;
+  border: solid 1px #eee0b9;
   width: 60%;
   height: auto;
   margin-top: 5px;
@@ -196,13 +199,13 @@ body {
   }
   .project_foto_mini {
     border-radius: 8px;
-    border: solid 1px;
+    border: solid 1px #eee0b9;
     width: 100%;
     scroll-margin-top: 100px;
   }
   .project_foto {
     border-radius: 8px;
-    border: solid 1px;
+    border: solid 1px #eee0b9;
     width: 100%;
   }
   .home_picture_container {

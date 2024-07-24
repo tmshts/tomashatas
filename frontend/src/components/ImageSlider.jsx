@@ -49,7 +49,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         transform: 'translate(0, -50%)',
         left: '32px',
         fontSize: '45px',
-        color: '#83677B',
+        color: '#A52A2A',
         zIndex: 1,
         cursor: 'pointer'
     };
@@ -60,7 +60,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         transform: 'translate(0, -50%)',
         right: '32px',
         fontSize: '45px',
-        color: '#83677B',
+        color: '#A52A2A',
         zIndex: 1,
         cursor: 'pointer'
     };
@@ -91,7 +91,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         margin: '5px 3px',
         cursor: 'pointer',
         fontSize: '15px',
-        color: '#83677B',
+        color: '#A52A2A',
     };
     
     const padding_link = {
@@ -109,7 +109,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         cursor: 'pointer',
         border: 'solid white 2px',
         borderRadius: '10px',
-        backgroundColor: '#83677B',
+        backgroundColor: '#A52A2A',
         width: '100px'
 
     };

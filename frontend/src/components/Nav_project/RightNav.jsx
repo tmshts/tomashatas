@@ -14,7 +14,7 @@ const Ul = styled.ul`
 
     @media (max-width: 768px) {
         flex-flow: column nowrap;
-        background-color: #00A693;
+        background-color: #eee0b9;
         position: fixed;
         margin-top: 0px;
         transform: ${({open}) => open ? 'translateX(0)' : 'translateX(100%)'};
@@ -27,7 +27,7 @@ const Ul = styled.ul`
         transition: transform 0.3s ease-in-out;
 
         .link_section_cv {
-            color: white;
+            color: black;
             cursor: pointer;
             padding: 20px 20px 0 0;
         }

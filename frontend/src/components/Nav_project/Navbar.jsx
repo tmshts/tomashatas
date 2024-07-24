@@ -8,7 +8,6 @@ const Nav = styled.nav`
     height: auto;
     display: flex;
     justify-content: space-between;
-    color: white;
     margin-top: -15px;
     margin-bottom: -15px;
 `

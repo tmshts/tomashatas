@@ -9,11 +9,10 @@ const Nav = styled.nav`
     height: auto;
     display: flex;
     justify-content: space-between;
-    background-color: #00A693;
+    background-color: #eee0b9;
     border-radius: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    color: white;    
 `
 
 const Navbar = ({ personal_details_ref, portfolio_ref, certificates_ref, work_experience_ref,

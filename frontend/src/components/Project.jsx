@@ -41,12 +41,13 @@ import Navbar from './Nav_project/Navbar'
 import ScrollToTop from './ScrollToTop'
 
 const CommentButton = styled.button`
-    color: #BF4F74;
+    color: #eee0b9;
     font-size: 1em;
     margin: 0.5em;
     padding: 0.25em 1em;
-    border: 2px solid #BF4F74;
+    border: 2px solid #A52A2A;
     border-radius: 10px;
+    background-color: #A52A2A;
     cursor: pointer;
     &:focus {
         outline: none
@@ -60,7 +61,7 @@ const LikeButton = styled(CommentButton)`
 
 const Input = styled.input`
     padding: grey;
-    border: 2px solid black;
+    border: 2px solid #A52A2A;
     border-radius: 3px;
     font-size: 15px;
     width: 30%;
@@ -72,20 +73,20 @@ const Input = styled.input`
 }`
 
 const link_style = {
-    color: "white",
-    fontSize: 18,
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 15,
     textDecoration: "none",
   }
 
   const link_and_navbar_style = {
-    backgroundColor: '#00A693',
+    backgroundColor: '#eee0b9',
     borderRadius: 10,
     marginTop: 5,
     marginBottom: 10,
     paddingLeft: 40,
     paddingTop: 15,
     paddingBottom: 15,
-    color: 'white',
     display: 'flex',
   }
 

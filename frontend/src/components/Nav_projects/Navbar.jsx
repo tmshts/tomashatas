@@ -9,11 +9,10 @@ const Nav = styled.nav`
     height: auto;
     display: flex;
     justify-content: space-between;
-    background-color: #00A693;
+    background-color: #eee0b9;
     border-radius: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    color: white;    
 `
 
 const Navbar = ({ blog_ref, christmas_ref, master_paper_ref, real_estate_ref, gym_ref }) => {

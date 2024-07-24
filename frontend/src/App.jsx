@@ -22,7 +22,7 @@ const Page = styled.div`
 `
 
 const Navigation = styled.div`
-  background: #83677B;
+  background: #A52A2A;
   padding: 1em;
   color: white;
   border-radius: 10px;
