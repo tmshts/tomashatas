@@ -73,7 +73,7 @@ const Home = () => {
             <br />
 
             <div className='home_about_me_text'>
-                Therefore, I started my Master's in Information Systems where I learned programming/scripting languages such as:
+                Therefore, I have pursued my Master's in Information Systems where I have learned programming/scripting languages such as:
                 C, Python, Java, JavaScript, React, etc. I couldn't have made a better decision.
             </div>
             
