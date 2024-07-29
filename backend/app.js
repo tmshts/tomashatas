@@ -28,6 +28,15 @@ app.use('/api/jobs', jobsRouter)
 app.use('/api/education', educationRouter)
 app.use(cors())
 
+//////
+// Server-Side Solution for React Router Refresh 404
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
+///////
+
 app.use(middleware.errorHandler)
 
 mongoose.connect(mongoUrl)

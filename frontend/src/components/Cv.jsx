@@ -63,7 +63,7 @@ const Cv = ({ jobs, education }) => {
 
                     <div className='motto'>
                         Internationally minded personality with unique background combining master’s degrees in business and
-                        information systemswith the aim of improving my IT skills in software/web development.
+                        information systems with the aim of improving my IT skills in software/web development.
                     </div>
 
                 <hr className='hr_cv' />
