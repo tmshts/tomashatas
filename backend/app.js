@@ -11,6 +11,10 @@ const middleware = require('./utils/middleware')
 
 const express = require('express')
 const app = express()
+
+// show static content where is build the front-end
+app.use(express.static('dist'))
+
 const cors = require('cors')
 app.use(express.json())
 
