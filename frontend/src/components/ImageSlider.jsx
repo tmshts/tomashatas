@@ -18,7 +18,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
     const slidesContainerStyles = {
         display: 'flex',
         height: '100%',
-        transition: 'transform ease-out 0.6s',
+        transition: 'transform ease-out 1s',
     }
 
     
@@ -140,7 +140,7 @@ const ImageSlider = ({ projects_fotos, parentWidth }) => {
         }
         timeRef.current = setTimeout(() => {
             goToNext();
-        }, 3000);
+        }, 5000);
 
         return () => clearTimeout(timeRef.current)
     }, [goToNext]);
