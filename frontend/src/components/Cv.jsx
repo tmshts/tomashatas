@@ -85,7 +85,7 @@ const Cv = ({ jobs, education }) => {
                     <h2 ref={certificates_ref} >Certificates</h2>
 
                     <div className='line_height'>
-                        <b>Full Stack Open from University of Helsinki </b> (React, Node.js, Express, REST API, MongoDB)
+                        <b>Full Stack Open from University of Helsinki </b> (React, Redux, React Router, Node.js, Express, REST API, MongoDB)
                     </div>
                     <p>
                         <i>More info about the certificate:</i><span> </span>
