@@ -10,6 +10,8 @@ import Christmas_sweet_home_foto from '../assets/5_Christmas_sweet_home.png'
 
 import { SocialIcon } from 'react-social-icons'
 
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
 
@@ -22,8 +24,8 @@ const Home = () => {
       ]
 
       const containerStyle = {
-        width: '90%', // 70%
-        height: '350px', // 480px
+        width: '100%', // 70%
+        height: '480px',
         margin: '0 auto', // maybe not necessary
         //border: 'solid black 3px',
         //borderRadius: '5px',
@@ -75,6 +77,12 @@ const Home = () => {
             <div className='home_about_me_text'>
                 Therefore, I have pursued my Master's in Information Systems where I have learned programming/scripting languages such as:
                 C, Python, Java, JavaScript, React, etc. I couldn't have made a better decision.
+            </div>
+
+            <br />
+
+            <div className='home_about_me_text'>
+                You can find more information about me <Link to="/cv">here</Link>.
             </div>
             
             {/* Home Contact Me */}
