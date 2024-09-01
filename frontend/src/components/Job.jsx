@@ -7,6 +7,7 @@ import pactum from '../assets/pactum.jpg'
 import trotec_1 from '../assets/trotec_1.jpg'
 import trotec_2 from '../assets/trotec_2.jpg'
 
+
 const Job = ({ jobs }) => {
 
     return (
