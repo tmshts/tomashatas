@@ -6,6 +6,8 @@ import Education from './Education'
 import main_picture from '../assets/main_picture.jpeg'
 import fullstack from '../assets/fullstack.png'
 import cs50w from '../assets/CS50W.png'
+import toefl from '../assets/toefl.jpg'
+import testdaf from '../assets/testdaf.jpg'
 
 import { useRef } from 'react';
 
@@ -153,7 +155,14 @@ const Cv = ({ jobs, education }) => {
                     <ul className="list_languages">
                         <li>Czech (mother tongue)</li>
                         <li>German (Advanced)</li>
+                        <img src={testdaf} className='certificate' alt='testdaf'/>
+                        <br/>
+                        <br/>
                         <li>English (Advanced)</li>
+                        <img src={toefl} className='certificate' alt='toefl'/>
+                        <br/>
+                        <br/>
+                        
                         <li>Spanish (Advanced)</li>
                         <li>Italian (Basic)</li>
                     </ul>
