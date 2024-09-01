@@ -33,6 +33,7 @@ const Job = ({ jobs }) => {
                     <div className="aptitudes">
                         <b>Aptitudes: </b>{job.aptitudes}
                     </div>
+
                     {job.ID == 1 && <img src={develop_1} className='certificate' alt="develop_1"/> }
                     {job.ID == 1 && <img src={develop_2} className='certificate' alt="develop_2"/> }
 
@@ -44,12 +45,9 @@ const Job = ({ jobs }) => {
                     {job.ID == 4 && <img src={trotec_2} className='certificate' alt="trotec_2"/> }
 
                 </div>
-                
-
 
             ))
             }
-
 
       </>
     )
