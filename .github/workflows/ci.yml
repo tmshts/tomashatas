@@ -10,7 +10,7 @@ defaults:
         working-directory: backend
 
 jobs:
-    deployment_pipeline:
+    build:
         runs-on: ubuntu-20.04
         steps:
             - uses: actions/checkout@v4
@@ -21,6 +21,10 @@ jobs:
               run: npm install
             - name: Build
               run: npm run build:ui
+              
+    deploy:
+        runs-on: ubuntu-20.04
+        steps:
             - uses: actions/checkout@v4
             - uses: superfly/flyctl-actions/setup-flyctl@master
             - run: flyctl deploy --remote-only
