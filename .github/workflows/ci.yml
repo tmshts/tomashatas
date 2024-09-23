@@ -5,6 +5,10 @@ on:
         branches:
             - main
 
+defaults:
+    run:
+        working-directory: backend
+
 jobs:
     deployment_pipeline:
         runs-on: ubuntu-20.04
