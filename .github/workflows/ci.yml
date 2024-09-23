@@ -26,7 +26,8 @@ jobs:
             - name: Build
               working-directory: ./frontend
               run: npm run build
-
+            - name: Copy Build Version from Frontend to Backend
+              run: npm copy:build_version
     deploy:
         runs-on: ubuntu-20.04
         steps:
