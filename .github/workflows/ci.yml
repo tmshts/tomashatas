@@ -18,12 +18,12 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                     node-version: '20'
-            - name: Install dependencies
+            - name: Install dependencies in Backend
               run: npm install
-            - name: Install dependencies in frontend
+            - name: Install dependencies in Frontend
               working-directory: ./frontend
               run: npm install 
-            - name: Build
+            - name: Build mini-version
               working-directory: ./frontend
               run: npm run build
             - name: Copy Build Version from Frontend to Backend
