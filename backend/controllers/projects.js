@@ -18,7 +18,38 @@ projectRouter.get('/comments', async (request, response, next) => {
     }
 })
 
+let get_view_project_1 = 0
+let get_view_project_2 = 0
+let get_view_project_3 = 0
+let get_view_project_4 = 0
+let get_view_project_5 = 0
+
 projectRouter.get('/:id', async (request, response, next) => {
+    
+    switch(parseInt(request.params.id)) {
+        case 1:
+            get_view_project_1++;
+            break;
+        case 2:
+            get_view_project_2++;
+            break;
+        case 3:
+            get_view_project_3++;
+            break;
+        case 4:
+            get_view_project_4++;
+            break;
+        case 5:
+            get_view_project_5++;
+            break;
+    }
+
+    console.log("1: " + get_view_project_1)
+    console.log("2: " + get_view_project_2)
+    console.log("3: " + get_view_project_3)
+    console.log("4: " + get_view_project_4)
+    console.log("5: " + get_view_project_5)
+
     try {
         const project = await Project.find({ID: request.params.id})
             .populate('comments', {
