@@ -12,8 +12,8 @@ primary_region = 'ams'
   PORT = "3000" # add this
 
 # added because of deploying on Fly.io with GitHub actions
-[processes]
-  app = "node app.js" # add this
+# [processes]
+#  app = "node app.js" # add this
 
 [http_service]
   internal_port = 3000

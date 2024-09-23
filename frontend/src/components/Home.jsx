@@ -39,7 +39,7 @@ const Home = () => {
             <div className="home_picture_container">
 
                 <div className="home_welcome_text_down">
-                    Hi 👋, I am junior web/software developer. GitHub Actions work
+                    Hi 👋, I am junior web/software developer.
                 </div>
 
 
