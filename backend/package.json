@@ -10,7 +10,7 @@
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",    
     "logs:prod": "fly logs",
-    "copy:build_version": "cd ../frontend/ && cp -r dist ../backend"
+    "copy:build_version": "rm -rf dist && cd ../frontend/ && cp -r dist ../backend"
   },
   "repository": {
     "type": "git",
