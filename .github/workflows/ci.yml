@@ -19,8 +19,6 @@ jobs:
                     node-version: '20'
             - name: Install dependencies
               run: npm install
-            - name: Install Vite 
-              run: npm create vite ./frontend -- --template react
             - name: Build
               run: npm run build:ui
 
