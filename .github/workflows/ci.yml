@@ -19,6 +19,7 @@ env:
   CONDITION: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
 
 
+  
 jobs:
     deployment_pipeline:
         runs-on: ubuntu-20.04
