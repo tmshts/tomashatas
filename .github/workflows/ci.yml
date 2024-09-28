@@ -1,0 +1,71 @@
+name: Deployment pipeline
+
+on:
+  push:
+      branches:
+          - main
+
+          
+defaults:
+ run:
+  working-directory: ./backend
+
+
+env:
+  # the below will be 'true'
+  CONDITION: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
+
+
+jobs:
+    deployment_pipeline:
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            - name: Install dependencies in Backend
+              run: npm install
+
+            - name: Install dependencies in Frontend
+              working-directory: ./backend/frontend
+              run: npm install 
+
+            - name: Check style in Frontend
+              working-directory: ./backend/frontend
+              run: npm run lint
+
+            - name: Build mini-version
+              working-directory: ./backend/frontend
+              run: npm run build
+
+            - name: Copy Build Version from Frontend to Backend
+              run: npm run copy:build_version
+
+            - name: Deploy to Fly.io
+              uses: superfly/flyctl-actions/setup-flyctl@master
+            - run: flyctl deploy --remote-only
+              env:
+                # in settings in github added FLY_API_TOKEN from Fly
+                FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+              # only in case of false condition and succeeded previous steps, is app deployed 
+              if: ${{ (env.CONDITION == 'false') && success() }}
+              # added from https://github.com/marketplace/actions/discord-webhook-notify
+
+    tag_release:
+      # dependency -> run after simple_deployment_pipeline is executed
+      needs: [deployment_pipeline]
+      runs-on: ubuntu-20.04
+      steps:
+      - name: Bump version and push tag
+        uses: actions/checkout@v4
+      - name: Tag
+        uses: anothrNick/github-tag-action@8c8163ef62cf9c4677c8e800f36270af27930f42
+        # uses: anothrNick/github-tag-action@1.71.0
+        env:
+          # since it is a third party it needs token for authentication 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # bumb the patch versioning
+          DEFAULT_BUMP: patch
+        # only in case of pull request is app deployed 
+        if: ${{ (env.CONDITION == 'false') }}
