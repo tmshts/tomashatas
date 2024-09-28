@@ -14,7 +14,6 @@ defaults:
  run:
   working-directory: ./backend
 
-
 env:
   # the below will be 'true'
   CONDITION: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
