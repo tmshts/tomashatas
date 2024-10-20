@@ -5,6 +5,8 @@ import Education from './Education'
 
 import main_picture from '../assets/main_picture.jpeg'
 import fullstack from '../assets/fullstack.png'
+import fullstack_cicd from '../assets/fullstack_cicd.png'
+import fullstack_containers from '../assets/fullstack_containers.png'
 import cs50w from '../assets/CS50W.png'
 import toefl from '../assets/toefl.jpg'
 import testdaf from '../assets/testdaf.jpg'
@@ -95,6 +97,29 @@ const Cv = ({ jobs, education }) => {
                     </p>
                     
                     <img src={fullstack} className='certificate' alt='fullstack'/>
+                    
+
+                    <div className='line_height'>
+                        <b>CI/CD from University of Helsinki </b> (Branches, Pull Request, Continuous Integration, Continuous Deployment, GitHub Actions, Workflow, Versioning, Periodic health check)
+                    </div>
+                    <p>
+                        <i>More info about the certificate:</i><span> </span>
+                        <a href="https://fullstackopen.com/en/part11/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
+                    </p>
+                    
+                    <img src={fullstack_cicd} className='certificate' alt='fullstack_cicd'/>
+
+
+                    <div className='line_height'>
+                        <b>Containers from University of Helsinki </b> (Images, Containers, Docker, Docker Network, Dockerfile, Docker Compose, Nginx, Mongo, Redis)
+                    </div>
+                    <p>
+                        <i>More info about the certificate:</i><span> </span>
+                        <a href="https://fullstackopen.com/en/part12/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
+                    </p>
+                    
+                    <img src={fullstack_containers} className='certificate' alt='fullstack_containers'/>
+
                     
                     <p className='line_height'>
                         <b>CS50’s Web Programming with Python and JavaScript from Harvard</b> (Django)
