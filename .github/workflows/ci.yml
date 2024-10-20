@@ -32,15 +32,15 @@ jobs:
               run: npm install
 
             - name: Install dependencies in Frontend
-              working-directory: ./backend/frontend
+              working-directory: ./frontend
               run: npm install 
 
             - name: Check style in Frontend
-              working-directory: ./backend/frontend
+              working-directory: ./frontend
               run: npm run lint
 
             - name: Build mini-version
-              working-directory: ./backend/frontend
+              working-directory: ./frontend
               run: npm run build
 
             - name: Copy Build Version from Frontend to Backend
