@@ -1,0 +1,5 @@
+For the purpose of an exercise of FullStackOpen from University of Helsinky, I changed the structure - >
+frontend folder is inside of backend folder and workflows are set accordingly.
+Set -> "copy:build_version": "cd ./frontend/ && cp -r dist ../dist" into package.json in backend.
+
+Now, I come to the old structure -> frontend and backend next to each other.
