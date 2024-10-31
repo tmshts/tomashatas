@@ -246,7 +246,7 @@ body {
 }
 
 .home_welcome_picture {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .home_welcome_text_down {
@@ -258,7 +258,9 @@ body {
 }
 
 .foto_home {
-  border-radius: 200px;
+  border-radius: 15px;
+  width: 250px;
+  height: auto;
 }
 
 .home_about_me_headline {
