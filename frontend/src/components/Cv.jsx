@@ -29,7 +29,6 @@ const Cv = ({ jobs, education }) => {
     const it_aptitudes_ref = useRef(null);
     const languages_ref = useRef(null);
 
-
     return (
     
         <>
