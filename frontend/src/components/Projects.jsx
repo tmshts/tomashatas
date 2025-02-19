@@ -31,8 +31,7 @@ const gym_ref = useRef(null);
 
         <>
 
-            <Navbar blog_ref={blog_ref} christmas_ref={christmas_ref} master_paper_ref={master_paper_ref}
-            real_estate_ref={real_estate_ref} gym_ref={gym_ref} />
+            <Navbar real_estate_ref={real_estate_ref} blog_ref={blog_ref} master_paper_ref={master_paper_ref} gym_ref={gym_ref} christmas_ref={christmas_ref} />
 
                 {projects.map(project =>
                 <div key={project.ID}>
@@ -43,9 +42,9 @@ const gym_ref = useRef(null);
                                 </h2>
 
                                 <div className='project_image'>
-                                    {project.ID == 1 && <img ref={blog_ref} src={Blog_blogs} className='project_foto_mini' alt="Blog_blogs"/> }
-                                    {project.ID == 2 && <img ref={master_paper_ref} src={Master_paper_home} className='project_foto_mini' alt="Master_paper_home"/> }
-                                    {project.ID == 3 && <img ref={real_estate_ref} src={Real_estate_overview} className='project_foto_mini' alt="Real_estate_overview"/> }
+                                    {project.ID == 1 && <img ref={real_estate_ref} src={Real_estate_overview} className='project_foto_mini' alt="Real_estate_overview"/> }
+                                    {project.ID == 2 && <img ref={blog_ref} src={Blog_blogs} className='project_foto_mini' alt="Blog_blogs"/> }
+                                    {project.ID == 3 && <img ref={master_paper_ref} src={Master_paper_home} className='project_foto_mini' alt="Master_paper_home"/> }
                                     {project.ID == 4 && <img ref={gym_ref} src={Gym_search} className='project_foto_mini' alt="Gym_search"/> }
                                     {project.ID == 5 && <img ref={christmas_ref} src={Christmas_sweet_home} className='project_foto_mini' alt="Christmas_sweet_home"/> }
                                 </div>

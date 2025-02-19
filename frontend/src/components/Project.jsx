@@ -21,7 +21,7 @@ import Master_paper_use_case from '../assets/2_Master_paper_use_case.png'
 import Real_estate_add_property from '../assets/3_Real_estate_add_property.png'
 import Real_estate_login from '../assets/3_Real_estate_login.png'
 import Real_estate_overview from '../assets/3_Real_estate_overview.png'
-import Real_estate_portfolio from '../assets/3_Real_estate_portfolio.png'
+import Real_estate_overview_map from '../assets/3_Real_estate_overview_map.png'
 
 import Gym_add from '../assets/4_Gym_add.png'
 import Gym_update from '../assets/4_Gym_update.png'
@@ -167,18 +167,22 @@ const Project = () => {
 
                 <h1 className='headline_1'>{project.title}</h1>
                     
-                <p>Source code / video can be found: <a href={project.source} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>
+                <p>Source code / video can be found:
+                    {project.ID == 1 && <i> private</i>}
+                    {project.ID != 1 && <a href={project.source} className='a_style' target="_blank" rel="noopener noreferrer">here</a>}
+                .</p>
+
                 {project.url && <p className='line_height'>More information about the project can be found: <a href={project.url} className='a_style' target="_blank" rel="noopener noreferrer">here</a>.</p>}
 
                 <h3 ref={about_ref}  className='project_h4_center'>About</h3>
                 <p className='line_height'>{project.about}</p>
 
                 <div className='project_foto_container'>
-                    {project.ID == 5 && <img src={Christmas_sweet_home} className='project_foto' alt="Christmas_sweet_home"/> }
-                    {project.ID == 1 && <img src={Blog_blogs} className='project_foto' alt="Blog_blogs"/> }
-                    {project.ID == 2 && <img src={Master_paper_home} className='project_foto' alt="Master_paper_home"/> }
-                    {project.ID == 3 && <img src={Real_estate_overview} className='project_foto' alt="Real_estate_overview"/> }
+                    {project.ID == 1 && <img src={Real_estate_overview} className='project_foto' alt="Real_estate_overview"/> }
+                    {project.ID == 2 && <img src={Blog_blogs} className='project_foto' alt="Blog_blogs"/> }
+                    {project.ID == 3 && <img src={Master_paper_home} className='project_foto' alt="Master_paper_home"/> }
                     {project.ID == 4 && <img src={Gym_search} className='project_foto' alt="Gym_search"/> }
+                    {project.ID == 5 && <img src={Christmas_sweet_home} className='project_foto' alt="Christmas_sweet_home"/> }
                 </div>
 
 
@@ -186,16 +190,17 @@ const Project = () => {
                 <p className='line_height'>{project.introduction}</p>
 
                 <div className='project_foto_container'>
-                    {project.ID == 5 && <img src={Christmas_sweet_ingredientes} className='project_foto' alt="Christmas_sweet_ingredientes"/> }
-                    {project.ID == 1 && <img src={Blog_login} className='project_foto' alt="Blog_login"/> }
-                    {project.ID == 2 && <img src={Master_paper_use_case} className='project_foto' alt="Master_paper_use_case"/> }
-                    {project.ID == 3 && <img src={Real_estate_login} className='project_foto' alt="Real_estate_login"/> }
-                    {project.ID == 3 && <img src={Real_estate_add_property} className='project_foto' alt="Real_estate_add_property"/> }
+                    {project.ID == 1 && <img src={Real_estate_login} className='project_foto' alt="Real_estate_login"/> }
+                    {project.ID == 1 && <img src={Real_estate_add_property} className='project_foto' alt="Real_estate_add_property"/> }
+                    {project.ID == 2 && <img src={Blog_login} className='project_foto' alt="Blog_login"/> }
+                    {project.ID == 3 && <img src={Master_paper_use_case} className='project_foto' alt="Master_paper_use_case"/> }
                     {project.ID == 4 && <img src={Gym_add} className='project_foto' alt="Gym_add"/> }
+                    {project.ID == 5 && <img src={Christmas_sweet_ingredientes} className='project_foto' alt="Christmas_sweet_ingredientes"/> }
 
-                    {project.ID == 1 && <img src={Blog_blog} className='project_foto' alt="Blog_blog"/> }
-                    {project.ID == 2 && <img src={Master_paper_further} className='project_foto' alt="Master_paper_further"/> }
-                    {project.ID == 3 && <img src={Real_estate_portfolio} className='project_foto' alt="Real_estate_portfolio"/> }
+
+                    {project.ID == 1 && <img src={Real_estate_overview_map} className='project_foto' alt="Real_estate_overview_map"/> }
+                    {project.ID == 2 && <img src={Blog_blog} className='project_foto' alt="Blog_blog"/> }
+                    {project.ID == 3 && <img src={Master_paper_further} className='project_foto' alt="Master_paper_further"/> }
                     {project.ID == 4 && <img src={Gym_update} className='project_foto' alt="Gym_update"/> }
                 </div>
 

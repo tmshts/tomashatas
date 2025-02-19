@@ -16,9 +16,9 @@ import { Link } from 'react-router-dom'
 const Home = () => {
 
     const projects_fotos = [
+        Real_estate_overview_foto,
         Blog_blogs_foto,
         Master_paper_home_foto,
-        Real_estate_overview_foto,
         Gym_search_foto,
         Christmas_sweet_home_foto
       ]
