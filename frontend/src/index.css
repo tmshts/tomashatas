@@ -170,7 +170,16 @@ body {
 .certificate {
   border-radius: 8px;
   border: solid 1px #eee0b9;
-  width: 60%;
+  width: 55%;
+  height: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.certificate_badge {
+  border-radius: 8px;
+  border: solid 1px #eee0b9;
+  width: 35%;
   height: auto;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -193,6 +202,25 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  .certificate {
+  border-radius: 8px;
+  border: solid 1px #eee0b9;
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  }
+
+  .certificate_badge {
+    border-radius: 8px;
+    border: solid 1px #eee0b9;
+    width: 50%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
   .cv {
     margin-top: 45px;
     padding-left: 10px;

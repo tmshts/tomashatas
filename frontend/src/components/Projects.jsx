@@ -33,7 +33,9 @@ const gym_ref = useRef(null);
 
             <Navbar real_estate_ref={real_estate_ref} blog_ref={blog_ref} master_paper_ref={master_paper_ref} gym_ref={gym_ref} christmas_ref={christmas_ref} />
 
-                {projects.map(project =>
+                {[...projects]
+                .sort((a,b) => a.ID - b.ID)
+                .map(project =>
                 <div key={project.ID}>
 
                         <Link style={padding} to={`/projects/${project.ID}`}>
