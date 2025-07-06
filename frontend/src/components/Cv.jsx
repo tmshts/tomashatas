@@ -203,15 +203,15 @@ const Cv = ({ jobs, education }) => {
                     <ul className="list_languages">
                         <li>Czech (mother tongue)</li>
                         <li>German (Advanced)</li>
-                        <img src={testdaf} className='certificate' alt='testdaf'/>
-                        <br/>
-                        <br/>
+                    </ul>  
+                    <img src={testdaf} className='certificate' alt='testdaf'/>
 
+                    <ul className="list_languages">
                         <li>English (Advanced)</li>
-                        <img src={toefl} className='certificate' alt='toefl'/>
-                        <br/>
-                        <br/>
-                        
+                    </ul>
+                    <img src={toefl} className='certificate' alt='toefl'/>
+                    
+                    <ul className="list_languages">
                         <li>Spanish (Advanced)</li>
                         <li>Italian (Basic)</li>
                     </ul>

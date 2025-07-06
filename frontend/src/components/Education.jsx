@@ -18,10 +18,11 @@ const Education = ({ education }) => {
                         {education.courses.map(course => (
                             <li key={course}>{course}</li>
                         ))}
+                    </ul>
+
                     {education.ID == 2 && <img src={maynooth} className='certificate' alt="maynooth"/> }
                     
                     {education.ID == 3 && <img src={usi} className='certificate' alt="usi"/> }
-                    </ul>
 
                 </div>
             ))
