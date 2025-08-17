@@ -119,7 +119,9 @@ function App() {
                 <Link style={padding_footer} to="/projects">Projects</Link>
 
 
-                {projects.map(project =>
+                {[...projects]
+                .sort((a,b) => a.ID - b.ID)
+                .map(project =>
                 <div key={project.ID} style={style_footer_projects}>
 
                         <Link style={style_footer_projects_links} to={`/projects/${project.ID}`}>

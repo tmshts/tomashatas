@@ -39,11 +39,20 @@ const RightNav = ({ open, blog_ref, christmas_ref, master_paper_ref, real_estate
     return (
             <Ul open={open}>
 
+
+                <div className='link_section_cv' onClick={() => real_estate_ref.current.scrollIntoView({
+                    behavior: 'smooth',
+                })}>
+                    <b>Real Estate App</b>
+                </div>
+            
+
                 <div className='link_section_cv' onClick={() => blog_ref.current.scrollIntoView({
                     behavior: 'smooth',
                 })}>
                     <b>Blog App</b>
                 </div>
+
 
                 <div className='link_section_cv' onClick={() => master_paper_ref.current.scrollIntoView({
                     behavior: 'smooth',
@@ -51,17 +60,13 @@ const RightNav = ({ open, blog_ref, christmas_ref, master_paper_ref, real_estate
                     <b>TDP Generator</b>
                 </div>
 
-                <div className='link_section_cv' onClick={() => real_estate_ref.current.scrollIntoView({
-                    behavior: 'smooth',
-                })}>
-                    <b>Real Estate App</b>
-                </div>
 
                 <div className='link_section_cv' onClick={() => gym_ref.current.scrollIntoView({
                     behavior: 'smooth'
                 })}>
                     <b>Gym App</b>
                 </div>
+
 
                 <div className='link_section_cv' onClick={() => christmas_ref.current.scrollIntoView({
                     behavior: 'smooth',
