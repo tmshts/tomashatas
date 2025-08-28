@@ -67,8 +67,9 @@ const Cv = ({ jobs, education }) => {
                     <hr className='hr_cv' />
 
                     <div className='motto'>
-                        Internationally experienced professional with master’s degrees in business and information systems,
-                        combining analytical and technical skills to deepen expertise in software and web development.
+                        Internationally experienced consultant with master’s degrees in Business and Information Systems,
+                        applying strong analytical and technical skills to design, develop, and implement effective software
+                        and web solutions.
                     </div>
 
                 <hr className='hr_cv' />
