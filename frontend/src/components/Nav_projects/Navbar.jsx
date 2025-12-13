@@ -15,12 +15,12 @@ const Nav = styled.nav`
     margin-bottom: 10px;
 `
 
-const Navbar = ({ blog_ref, christmas_ref, master_paper_ref, real_estate_ref, gym_ref }) => {
+const Navbar = ({ blog_ref, christmas_ref, master_paper_ref, real_estate_ref, gym_ref, speak_ref }) => {
     return (
         <Nav>
 
             <Burger blog_ref={blog_ref} christmas_ref={christmas_ref} master_paper_ref={master_paper_ref}
-            real_estate_ref={real_estate_ref} gym_ref={gym_ref} />
+            real_estate_ref={real_estate_ref} gym_ref={gym_ref} speak_ref={speak_ref} />
 
         </Nav>
     )

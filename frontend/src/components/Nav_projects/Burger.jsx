@@ -43,7 +43,7 @@ const StyledBurger = styled.div`
     }
 `;
 
-const Burger = ({ christmas_ref, blog_ref, master_paper_ref, real_estate_ref, gym_ref }) => {
+const Burger = ({ christmas_ref, blog_ref, master_paper_ref, real_estate_ref, gym_ref, speak_ref }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -56,7 +56,7 @@ const Burger = ({ christmas_ref, blog_ref, master_paper_ref, real_estate_ref, gy
             </StyledBurger>
             
             <RightNav open={open} blog_ref={blog_ref} christmas_ref={christmas_ref} master_paper_ref={master_paper_ref}
-            real_estate_ref={real_estate_ref} gym_ref={gym_ref} />
+            real_estate_ref={real_estate_ref} gym_ref={gym_ref} speak_ref={speak_ref} />
         </>
     )
 }

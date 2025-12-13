@@ -2,11 +2,12 @@ import main_picture from '../assets/main_picture.jpeg'
 
 import ImageSlider from './ImageSlider'
 
-import Blog_blogs_foto from '../assets/1_Blog_blogs.png'
-import Master_paper_home_foto from '../assets/2_Master_paper_home.png'
+import GymProgg_main from '../assets/1_GymProgg_main.png'
+import Speak_intro from '../assets/2_speak_intro.png'
 import Real_estate_overview_foto from '../assets/3_Real_estate_overview.png'
-import Gym_search_foto from '../assets/4_Gym_update.png'
+import Blog_blogs_foto from '../assets/4_Blog_blogs.png'
 import Christmas_sweet_home_foto from '../assets/5_Christmas_sweet_home.png'
+import Master_paper_home_foto from '../assets/6_Master_paper_home.png'
 
 import { SocialIcon } from 'react-social-icons'
 
@@ -16,11 +17,12 @@ import { Link } from 'react-router-dom'
 const Home = () => {
 
     const projects_fotos = [
+        GymProgg_main,
+        Speak_intro,
         Real_estate_overview_foto,
         Blog_blogs_foto,
-        Master_paper_home_foto,
-        Gym_search_foto,
-        Christmas_sweet_home_foto
+        Christmas_sweet_home_foto,
+        Master_paper_home_foto
       ]
 
       const containerStyle = {

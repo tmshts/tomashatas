@@ -1,14 +1,14 @@
-POST http://localhost:3003/api/projects
+POST http://localhost:3000/api/projects
 Content-Type: application/json
 
 {
-    "title": "Christmas Sweet",
-    "introduction": "This website serves as a platform where you can view Czech Christmas Sweet and order it in Mexico City.",
-    "source": "https://github.com/tmshts/christmas_sweet",
-    "about": "Christmas sweet website is a kind of online platform concerning typical Czech Christmas sweet. An user landing on the webpage is able to view the Christmas sweet and make an order. This platform was made for Mexico City.",    
-    "implementation": "The frontend is built with React. Docker image was built from a Dockerfile and then was run in order to create an instance of a container. The website was then deployed on Fly.io",
-    "tools_frontend": ["React", "Styled-components", "ESLint"],
+    "title": "Offer Language Lessons",
+    "introduction": "This website serves as a platform to learn English, German, Spanish, or Czech with Tomas.",
+    "source": "private",
+    "about": "The webpage was created to attract language learners. It serves as a platform where users can book personalized English, German, Spanish, or Czech lessons with Tomas.",    
+    "implementation": "The frontend is built with React and Vite. A Docker image was created from a Dockerfile to run a container instance. The website is deployed online for students to book lessons with Tomas.",
+    "tools_frontend": ["React", "Serve", "Material UI"],
     "tools_backend": ["Docker", "Fly.io"],
-    "url": "https://galletaschecas.fly.dev",
+    "url": "https://www.speakwithtomas.com",
     "likes": 0
 }
