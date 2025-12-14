@@ -247,16 +247,16 @@ const Project = () => {
                 <h3 ref={implementation_ref} className='project_h4_center'>Implementation</h3>
                 <p className='line_height'>{project.implementation}</p>
 
-                <h3 className='project_h4_center'>Front-End</h3>
+                <h3 className='project_h4_center'>Back-End</h3>
                 <ul className="list_frontend_backend line_height">
-                        {project.tools_frontend.map(tool => (
+                        {project.tools_backend.map(tool => (
                             <li key={tool}>{tool}</li>
                         ))}
                 </ul>
 
-                <h3 className='project_h4_center'>Back-End</h3>
+                <h3 className='project_h4_center'>Front-End</h3>
                 <ul className="list_frontend_backend line_height">
-                        {project.tools_backend.map(tool => (
+                        {project.tools_frontend.map(tool => (
                             <li key={tool}>{tool}</li>
                         ))}
                 </ul>
