@@ -71,7 +71,7 @@ const Footer = () => {
             )}
 
             <br/>
-            <em>© 2023 <a href="https://github.com/tmshts" className='a_style' target="_blank" rel="noopener noreferrer">tmshts</a>. All rights reserved.</em>
+            <em>© {new Date().getFullYear()} <a href="https://github.com/tmshts" className='a_style' target="_blank" rel="noopener noreferrer">tomashatas</a>. All rights reserved.</em>
             
         </FooterWrapper>
 
