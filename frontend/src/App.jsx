@@ -9,6 +9,8 @@ import Home from './components/Home'
 import Projects from './components/Projects'
 import Project from './components/Project'
 import Cv from './components/Cv'
+import Footer from './components/Footer'
+
 import {
   BrowserRouter as Router,
   Routes, Route, Link
@@ -30,42 +32,12 @@ const Navigation = styled.div`
   justify-content: space-around;
 `
 
-const Footer = styled.div`
-  background: #ADADAD;
-  padding: 1em;
-  margin-top: 1em;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  cursor: pointer;
-  text-decoration: none;
-
-`
-
 const padding = {
   padding: 5,
   color: "white",
   fontSize: 20,
   textDecoration: "none",
   fontWeight: 'bold'
-}
-
-const padding_footer = {
-  padding: 5,
-  color: "black",
-  textDecoration: "none",
-  fontWeight: 'bold'
-}
-
-const style_footer_projects = {
-  paddingTop: 8,
-  paddingLeft: 30,
-}
-
-const style_footer_projects_links = {
-  color: "black",
-  textDecoration: "none",
 }
 
 
@@ -113,32 +85,11 @@ function App() {
                 <Route path="/projects/:id" element={<Project />} />
             </Routes>
             
-            <Footer>
-                <Link style={padding_footer} to="/">Home</Link>
-                <Link style={padding_footer} to="/cv">CV</Link>
-                <Link style={padding_footer} to="/projects">Projects</Link>
+            <Footer />
 
-
-                {[...projects]
-                .sort((a,b) => a.ID - b.ID)
-                .map(project =>
-                <div key={project.ID} style={style_footer_projects}>
-
-                        <Link style={style_footer_projects_links} to={`/projects/${project.ID}`}>
-                              <b>
-                                  {project.title}
-                              </b>
-                        </Link>
-                        
-                </div>
-                )}
-
-                <br/>
-                <em>© 2024 <a href="https://github.com/tmshts" className='a_style' target="_blank" rel="noopener noreferrer">tmshts</a>. All rights reserved.</em>
-            </Footer>
         </Page>
     </Router>
-)
+  )
 
 }
 

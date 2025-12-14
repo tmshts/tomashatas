@@ -33,11 +33,25 @@ const Ul = styled.ul`
     }
 `
 
-const RightNav = ({ open, blog_ref, christmas_ref, master_paper_ref, real_estate_ref, gym_ref }) => {
+const RightNav = ({ open, blog_ref, christmas_ref, master_paper_ref, real_estate_ref, gym_ref, speak_ref }) => {
 
 
     return (
             <Ul open={open}>
+
+
+                <div className='link_section_cv' onClick={() => gym_ref.current.scrollIntoView({
+                    behavior: 'smooth'
+                })}>
+                    <b>Gym App</b>
+                </div>
+
+
+                <div className='link_section_cv' onClick={() => speak_ref.current.scrollIntoView({
+                    behavior: 'smooth',
+                })}>
+                    <b>Offer Language Lessons</b>
+                </div>
 
 
                 <div className='link_section_cv' onClick={() => real_estate_ref.current.scrollIntoView({
@@ -54,25 +68,19 @@ const RightNav = ({ open, blog_ref, christmas_ref, master_paper_ref, real_estate
                 </div>
 
 
+                <div className='link_section_cv' onClick={() => christmas_ref.current.scrollIntoView({
+                    behavior: 'smooth',
+                })}>
+                    <b>Christmas Sweet</b>
+                </div>
+                
+
                 <div className='link_section_cv' onClick={() => master_paper_ref.current.scrollIntoView({
                     behavior: 'smooth',
                 })}>
                     <b>TDP Generator</b>
                 </div>
 
-
-                <div className='link_section_cv' onClick={() => gym_ref.current.scrollIntoView({
-                    behavior: 'smooth'
-                })}>
-                    <b>Gym App</b>
-                </div>
-
-
-                <div className='link_section_cv' onClick={() => christmas_ref.current.scrollIntoView({
-                    behavior: 'smooth',
-                })}>
-                    <b>Christmas Sweet</b>
-                </div>
 
             </Ul>
     )
