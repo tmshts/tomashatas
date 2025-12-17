@@ -176,9 +176,11 @@ const Cv = ({ jobs, education }) => {
                         <li>React</li>
                         <li>HTML</li>
                         <li>CSS</li>
+                        <li>Material UI</li>
                         <li>NodeJS</li>
                         <li>Express</li>
                         <li>REST API</li>
+                        <li>Postman</li>
                         <li>Django</li>
                         <li>AJAX</li>
                         <li>jQuery</li>
@@ -188,12 +190,25 @@ const Cv = ({ jobs, education }) => {
 
                         <li>SPARQL</li>
                         <li>Git</li>
-                        <li>Postman</li>
+                        <li>Bitbucket</li>
                         <li>Docker</li>
                         <li>UML</li>
                         <li>LaTeX</li>
                         <li>Visual Studio Code</li>
+                        <li>Cypress</li>
+                        <li>Unit Testing</li>
+
                         <li>AWS</li>
+                        <li>GenAI</li>
+                        <li>LLM</li>
+                        <li>Databricks</li>
+                        <li>dbt</li>
+                        <li>Dagster</li>
+                        <li>Jenkins</li>
+                        <li>BPMN</li>
+                        <li>Signavio</li>
+                        <li>Celonis</li>
+                        <li>Sparx Enterprise Architect</li>
                         
                     </ul>
 

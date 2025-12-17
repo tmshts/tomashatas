@@ -31,7 +31,6 @@ const Job = ({ jobs }) => {
                             {job.tasks.map(task => (
                             <li key={task}>{task}</li>                            
                             ))}
-                            {job.ID == 2 && <a href="https://hasteva.mx" target="_blank">https://hasteva.mx</a> }
                         </ul>
                         
                         <div className="aptitudes">
