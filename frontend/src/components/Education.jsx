@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import maynooth from '../assets/maynooth.jpg'
 import usi from '../assets/usi.jpg'
+import fau_urkunde from '../assets/fau_urkunde.jpg'
 
 
 const Education = ({ education }) => {
@@ -19,6 +20,8 @@ const Education = ({ education }) => {
                             <li key={course}>{course}</li>
                         ))}
                     </ul>
+                    
+                    {education.ID == 1 && <img src={fau_urkunde} className='certificate' alt="fau_urkunde"/> }
 
                     {education.ID == 2 && <img src={maynooth} className='certificate' alt="maynooth"/> }
                     
