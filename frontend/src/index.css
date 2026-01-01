@@ -278,10 +278,11 @@ body {
 }
 
 .home_welcome_text_down {
-  font-family: 'Brush Script MT';
-  font-weight: bold;
-  font-size: 300%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
   text-align: center;
+  line-height: 1.3;
   margin-top: 20px;
 }
 
