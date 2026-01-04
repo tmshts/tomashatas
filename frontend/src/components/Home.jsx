@@ -41,7 +41,7 @@ const Home = () => {
             <div className="home_picture_container">
 
                 <div className="home_welcome_text_down">
-                    Hi 👋, I am an IT and business professional with international experience and multilingual skills.
+                    An experienced IT and business professional with international experience, fluent in multiple languages, and a strong passion for stock market investing.
                 </div>
 
 
