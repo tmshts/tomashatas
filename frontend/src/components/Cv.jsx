@@ -28,7 +28,7 @@ const Cv = ({ jobs, education }) => {
     const certificates_ref = useRef(null);
     const work_experience_ref = useRef(null);
     const education_ref = useRef(null);
-    const it_aptitudes_ref = useRef(null);
+    const aptitudes_ref = useRef(null);
     const languages_ref = useRef(null);
 
     return (
@@ -37,7 +37,7 @@ const Cv = ({ jobs, education }) => {
 
             <Navbar personal_details_ref={personal_details_ref} portfolio_ref={portfolio_ref}
             certificates_ref={certificates_ref} work_experience_ref={work_experience_ref}
-            education_ref={education_ref} it_aptitudes_ref={it_aptitudes_ref}
+            education_ref={education_ref} aptitudes_ref={aptitudes_ref}
             languages_ref={languages_ref} />
 
             <div className='cv'>
@@ -67,7 +67,8 @@ const Cv = ({ jobs, education }) => {
                     <hr className='hr_cv' />
 
                     <div className='motto'>
-                        An experienced IT and business professional with international experience, fluent in multiple languages, and a strong passion for stock market investing.
+                        Strategic advisor translating emerging technologies to drive business growth, operational efficiency, and
+                        digital transformation. Experienced in leading cross-functional team and advising stakeholders.
                     </div>
 
                 <hr className='hr_cv' />
@@ -94,6 +95,8 @@ const Cv = ({ jobs, education }) => {
                         
                         <img src={aws} className='certificate_badge' alt='aws'/>
 
+                        <br></br>
+                        <br></br>
 
                         <div className='line_height'>
                             <b>HashiCorp Certified: Terraform Associate (003)</b>
@@ -105,6 +108,8 @@ const Cv = ({ jobs, education }) => {
                         
                         <img src={terraform} className='certificate_badge' alt='terraform'/>
 
+                        <br></br>
+                        <br></br>
 
                         <div className='line_height'>
                             <b>Full Stack Open from University of Helsinki </b> (React, Redux, React Router, Node.js, Express, REST API, MongoDB)
@@ -116,6 +121,8 @@ const Cv = ({ jobs, education }) => {
                         
                         <img src={fullstack} className='certificate' alt='fullstack'/>
 
+                        <br></br>
+                        <br></br>
 
                         <div className='line_height'>
                             <b>CI/CD from University of Helsinki </b> (Branches, Pull Request, Continuous Integration, Continuous Deployment, GitHub Actions, Workflow, Versioning, Periodic health check)
@@ -127,6 +134,8 @@ const Cv = ({ jobs, education }) => {
                         
                         <img src={fullstack_cicd} className='certificate' alt='fullstack_cicd'/>
 
+                        <br></br>
+                        <br></br>
 
                         <div className='line_height'>
                             <b>Containers from University of Helsinki </b> (Images, Containers, Docker, Docker Network, Dockerfile, Docker Compose, Nginx, Mongo, Redis)
@@ -138,6 +147,7 @@ const Cv = ({ jobs, education }) => {
                         
                         <img src={fullstack_containers} className='certificate' alt='fullstack_containers'/>
 
+                        <br></br>
                         
                         <p className='line_height'>
                             <b>CS50’s Web Programming with Python and JavaScript from Harvard</b> (Django)
@@ -164,51 +174,83 @@ const Cv = ({ jobs, education }) => {
 
                 <hr className='hr_cv' />
 
-                    <h2 ref={it_aptitudes_ref} >IT Aptitudes</h2>
+                    <h2 ref={aptitudes_ref} >Aptitudes</h2>
 
-                    <ul className="list_it_aptitudes">
-                        <li>Python</li>
-                        <li>Java</li>
+                    <h3>Strategic</h3>
 
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Material UI</li>
-                        <li>NodeJS</li>
-                        <li>Express</li>
-                        <li>REST API</li>
-                        <li>Postman</li>
-                        <li>Django</li>
-                        <li>AJAX</li>
-                        <li>jQuery</li>
-                        <li>SQL</li>
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
+                        <ul className="list_aptitudes">
 
-                        <li>SPARQL</li>
-                        <li>Git</li>
-                        <li>Bitbucket</li>
-                        <li>Docker</li>
-                        <li>UML</li>
-                        <li>LaTeX</li>
-                        <li>Visual Studio Code</li>
-                        <li>Cypress</li>
-                        <li>Unit Testing</li>
+                            <li>Digital Transformation</li>
+                            <li>AI Strategy Consulting</li>
+                            <li>Technology Roadmapping</li>                            
+                            <li>Client Engagement</li>
+                            <li>Presentation</li>
+                            <li>Workshop Facilitation</li>
+                            <li>Market Analysis</li>
+                            <li>Process Optimization</li>
+                            <li>Fintech</li>
+                            <li>Blockchain Advisory</li>
 
-                        <li>AWS</li>
-                        <li>GenAI</li>
-                        <li>LLM</li>
-                        <li>Databricks</li>
-                        <li>dbt</li>
-                        <li>Dagster</li>
-                        <li>Jenkins</li>
-                        <li>BPMN</li>
-                        <li>Signavio</li>
-                        <li>Celonis</li>
-                        <li>Sparx Enterprise Architect</li>
-                        
-                    </ul>
+                        </ul>
+
+                    <h3>Technical</h3>
+
+                        <ul className="list_aptitudes">
+                            <li>Python</li>
+                            <li>Java</li>
+
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Material UI</li>
+                            <li>NodeJS</li>
+                            <li>Express</li>
+                            <li>REST API</li>
+                            <li>Postman</li>
+                            <li>Django</li>
+                            <li>AJAX</li>
+                            <li>jQuery</li>
+                            <li>SQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+
+                            <li>SPARQL</li>
+                            <li>Git</li>
+                            <li>Bitbucket</li>
+                            <li>Docker</li>
+                            <li>UML</li>
+                            <li>LaTeX</li>
+                            <li>Visual Studio Code</li>
+                            <li>Cypress</li>
+                            <li>Unit Testing</li>
+
+                            <li>AWS</li>
+                            <li>GenAI</li>
+                            <li>LLM</li>
+                            <li>Databricks</li>
+                            <li>dbt</li>
+                            <li>Dagster</li>
+                            <li>Jenkins</li>
+                            <li>BPMN</li>
+                            <li>Signavio</li>
+                            <li>Celonis</li>
+                            <li>Sparx Enterprise Architect</li>
+                            
+                        </ul>
+
+
+                    <h3>Soft</h3>
+
+                        <ul className="list_aptitudes">
+
+                            <li>Leadership</li>
+                            <li>Cross-Functional Collaboration</li>
+                            <li>Negotiation</li>
+                            <li>Public Speaking</li>
+
+                        </ul>
+
 
                 <hr className='hr_cv' />
 

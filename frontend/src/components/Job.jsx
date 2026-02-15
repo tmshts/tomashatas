@@ -32,10 +32,6 @@ const Job = ({ jobs }) => {
                             <li key={task}>{task}</li>                            
                             ))}
                         </ul>
-                        
-                        <div className="aptitudes">
-                            <b>Aptitudes: </b>{job.aptitudes}
-                        </div>
 
                         {job.ID == 3 && <img src={develop_1} className='certificate' alt="develop_1"/> }
                         {job.ID == 3 && <img src={develop_2} className='certificate' alt="develop_2"/> }

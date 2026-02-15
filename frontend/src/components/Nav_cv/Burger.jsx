@@ -44,7 +44,7 @@ const StyledBurger = styled.div`
 `;
 
 const Burger = ({ personal_details_ref, portfolio_ref, certificates_ref, work_experience_ref,
-    education_ref, it_aptitudes_ref, languages_ref }) => {
+    education_ref, aptitudes_ref, languages_ref }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -58,7 +58,7 @@ const Burger = ({ personal_details_ref, portfolio_ref, certificates_ref, work_ex
             
             <RightNav open={open} personal_details_ref={personal_details_ref} portfolio_ref={portfolio_ref}
             certificates_ref={certificates_ref} work_experience_ref={work_experience_ref}
-            education_ref={education_ref} it_aptitudes_ref={it_aptitudes_ref}
+            education_ref={education_ref} aptitudes_ref={aptitudes_ref}
             languages_ref={languages_ref} />
         </>
     )

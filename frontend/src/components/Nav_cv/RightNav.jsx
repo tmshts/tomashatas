@@ -34,7 +34,7 @@ const Ul = styled.ul`
 `
 
 const RightNav = ({ open, personal_details_ref, portfolio_ref, certificates_ref, work_experience_ref,
-    education_ref, it_aptitudes_ref, languages_ref }) => {
+    education_ref, aptitudes_ref, languages_ref }) => {
 
 
     return (
@@ -70,10 +70,10 @@ const RightNav = ({ open, personal_details_ref, portfolio_ref, certificates_ref,
                     <b>Education</b>
                 </div>
 
-                <div className='link_section_cv' onClick={() => it_aptitudes_ref.current.scrollIntoView({
+                <div className='link_section_cv' onClick={() => aptitudes_ref.current.scrollIntoView({
                     behavior: 'smooth'
                 })}>
-                    <b>IT Aptitudes</b>
+                    <b>Aptitudes</b>
                 </div>
 
                 <div className='link_section_cv' onClick={() => languages_ref.current.scrollIntoView({

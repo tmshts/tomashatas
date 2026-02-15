@@ -336,7 +336,7 @@ body {
   margin-bottom: 30px;
 }
 
-.list_it_aptitudes {
+.list_aptitudes {
   column-count: 4;
   column-gap: 40px;
   margin-left: -20px;
@@ -349,7 +349,7 @@ body {
   font-size: large;
 }
 
-.list_it_aptitudes li {
+.list_aptitudes li {
   line-height: 1.8;
 }
 
