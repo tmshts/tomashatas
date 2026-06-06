@@ -52,7 +52,7 @@ const ImageSlider = ({ projects_fotos }) => {
 
   useEffect(() => {
     if (timeRef.current) clearTimeout(timeRef.current)
-    timeRef.current = setTimeout(goToNext, 4000)
+    timeRef.current = setTimeout(goToNext, 5000)
     return () => clearTimeout(timeRef.current)
   }, [currentIndex, goToNext])
 
