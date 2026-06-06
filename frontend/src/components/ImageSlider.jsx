@@ -4,21 +4,55 @@ import { Link } from 'react-router-dom'
 
 const ImageSlider = ({ projects_fotos }) => {
   const timeRef = useRef(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const n = projects_fotos.length
+  // Extended array: [clone_of_last, ...real_slides, clone_of_first]
+  // currentIndex 1..n maps to real slides; 0 = clone of last, n+1 = clone of first
+  const extended = [projects_fotos[n - 1], ...projects_fotos, projects_fotos[0]]
+  const [currentIndex, setCurrentIndex] = useState(1)
+  const [animated, setAnimated] = useState(true)
+
+  // 0-based real index for dots and project link
+  const realIndex = currentIndex === 0 ? n - 1 : currentIndex === n + 1 ? 0 : currentIndex - 1
 
   const goToNext = useCallback(() => {
-    setCurrentIndex(i => (i === projects_fotos.length - 1 ? 0 : i + 1))
-  }, [projects_fotos.length])
+    setAnimated(true)
+    setCurrentIndex(i => i + 1)
+  }, [])
 
   const goToPrevious = () => {
-    setCurrentIndex(i => (i === 0 ? projects_fotos.length - 1 : i - 1))
+    setAnimated(true)
+    setCurrentIndex(i => i - 1)
   }
 
-  const goToSlide = idx => setCurrentIndex(idx)
+  const goToSlide = idx => {
+    setAnimated(true)
+    setCurrentIndex(idx + 1)
+  }
+
+  // After landing on a clone, instantly snap to the real counterpart
+  const handleTransitionEnd = useCallback(() => {
+    if (currentIndex === n + 1) {
+      setAnimated(false)
+      setCurrentIndex(1)
+    } else if (currentIndex === 0) {
+      setAnimated(false)
+      setCurrentIndex(n)
+    }
+  }, [currentIndex, n])
+
+  // Re-enable animation after the invisible snap render
+  useEffect(() => {
+    if (!animated) {
+      const id = requestAnimationFrame(() =>
+        requestAnimationFrame(() => setAnimated(true))
+      )
+      return () => cancelAnimationFrame(id)
+    }
+  }, [animated])
 
   useEffect(() => {
     if (timeRef.current) clearTimeout(timeRef.current)
-    timeRef.current = setTimeout(goToNext, 5000)
+    timeRef.current = setTimeout(goToNext, 4000)
     return () => clearTimeout(timeRef.current)
   }, [currentIndex, goToNext])
 
@@ -49,13 +83,16 @@ const ImageSlider = ({ projects_fotos }) => {
       {/* Slide track */}
       <div style={{ flex: 1, position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
 
-        <div style={{
-          display: 'flex',
-          height: '100%',
-          transform: `translateX(${-currentIndex * 100}%)`,
-          transition: 'transform 0.8s ease-in-out',
-        }}>
-          {projects_fotos.map((foto, i) => (
+        <div
+          onTransitionEnd={handleTransitionEnd}
+          style={{
+            display: 'flex',
+            height: '100%',
+            transform: `translateX(${-currentIndex * 100}%)`,
+            transition: animated ? 'transform 0.8s ease-in-out' : 'none',
+          }}
+        >
+          {extended.map((foto, i) => (
             <div
               key={i}
               style={{
@@ -73,7 +110,7 @@ const ImageSlider = ({ projects_fotos }) => {
         <button onClick={goToNext}     style={arrowStyle('right')} aria-label="Next">›</button>
 
         <Link
-          to={`/projects/${currentIndex + 1}`}
+          to={`/projects/${realIndex + 1}`}
           style={{
             position: 'absolute',
             bottom: '1.25rem',
@@ -97,9 +134,9 @@ const ImageSlider = ({ projects_fotos }) => {
       <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
         {projects_fotos.map((_, i) => (
           <button
-            key={i === currentIndex ? `active-${currentIndex}` : `dot-${i}`}
+            key={i === realIndex ? `active-${realIndex}` : `dot-${i}`}
             onClick={() => goToSlide(i)}
-            className={`slider-dot ${i === currentIndex ? 'slider-dot-active' : 'slider-dot-inactive'}`}
+            className={`slider-dot ${i === realIndex ? 'slider-dot-active' : 'slider-dot-inactive'}`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
