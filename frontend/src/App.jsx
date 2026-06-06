@@ -13,84 +13,72 @@ import Footer from './components/Footer'
 
 import {
   BrowserRouter as Router,
-  Routes, Route, Link
+  Routes,
+  Route,
+  NavLink,
+  Link,
+  useLocation,
 } from 'react-router-dom'
 
-import styled from 'styled-components'
-
-
-const Page = styled.div`
-  padding: 1em;
-`
-
-const Navigation = styled.div`
-  background: #A52A2A;
-  padding: 1em;
-  color: white;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-around;
-`
-
-const padding = {
-  padding: 5,
-  color: "white",
-  fontSize: 20,
-  textDecoration: "none",
-  fontWeight: 'bold'
+function ScrollToTopOnNavigate() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
 }
 
-
 function App() {
-
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(initializeProjects()) 
-  }, [])
+  useEffect(() => { dispatch(initializeProjects()) }, [])
+  useEffect(() => { dispatch(initializeJobs()) }, [])
+  useEffect(() => { dispatch(initializeEducation()) }, [])
 
-  useEffect(() => {
-    dispatch(initializeJobs()) 
-  }, [])
-
-  useEffect(() => {
-    dispatch(initializeEducation()) 
-  }, [])
-
-  const jobs = useSelector(({ jobs }) => {
-    return jobs
-  })
-
-  const education = useSelector(({ education }) => {
-    return education
-  })
-
-  const projects = useSelector(({ projects }) => {
-    return projects
-  })
+  const jobs = useSelector(({ jobs }) => jobs)
+  const education = useSelector(({ education }) => education)
+  const projects = useSelector(({ projects }) => projects)
 
   return (
     <Router>
-        <Page>
-            <Navigation>
-                <Link style={padding} to="/">Home</Link>
-                <Link style={padding} to="/cv">CV</Link>
-                <Link style={padding} to="/projects">Projects</Link>
-            </Navigation>
+      <ScrollToTopOnNavigate />
+      <header className="main-nav">
+        <Link to="/" className="nav-logo">Tomas Hatas</Link>
+        <nav className="nav-links">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/cv"
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
+            CV
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
+            Projects
+          </NavLink>
+        </nav>
+      </header>
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/cv" element={<Cv jobs={jobs} education={education} /> } />
-                <Route path="/projects" element={<Projects projects={projects} />} />
-                <Route path="/projects/:id" element={<Project />} />
-            </Routes>
-            
-            <Footer />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cv" element={<Cv jobs={jobs} education={education} />} />
+          <Route path="/projects" element={<Projects projects={projects} />} />
+          <Route path="/projects/:id" element={<Project />} />
+        </Routes>
+      </main>
 
-        </Page>
+      <Footer />
     </Router>
   )
-
 }
 
 export default App

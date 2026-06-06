@@ -1,189 +1,112 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// credit to monsterlessonsacademy (GitHub Account) with the ImageSlider
 
-const ImageSlider = ({ projects_fotos, parentWidth }) => {
+const ImageSlider = ({ projects_fotos }) => {
+  const timeRef = useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-    const timeRef = useRef(null);
+  const goToNext = useCallback(() => {
+    setCurrentIndex(i => (i === projects_fotos.length - 1 ? 0 : i + 1))
+  }, [projects_fotos.length])
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const goToPrevious = () => {
+    setCurrentIndex(i => (i === 0 ? projects_fotos.length - 1 : i - 1))
+  }
 
-    const sliderStyles = {
-        height: '100%',
-        position: 'relative',
-    };
+  const goToSlide = idx => setCurrentIndex(idx)
 
-    
-    const slidesContainerStyles = {
-        display: 'flex',
-        height: '100%',
-        transition: 'transform ease-out 1s',
-    }
+  useEffect(() => {
+    if (timeRef.current) clearTimeout(timeRef.current)
+    timeRef.current = setTimeout(goToNext, 5000)
+    return () => clearTimeout(timeRef.current)
+  }, [currentIndex, goToNext])
 
-    
-    const getSlidesContainerStylesWithWidth = () => ({
-        ...slidesContainerStyles,
-        width: parentWidth * projects_fotos.length,
-        transform: `translateX(${-(currentIndex * parentWidth)}px)`
-    })
-    
+  const arrowStyle = (side) => ({
+    position: 'absolute',
+    top: '50%',
+    [side]: '0.75rem',
+    transform: 'translateY(-50%)',
+    zIndex: 2,
+    width: '40px',
+    height: '40px',
+    borderRadius: '50%',
+    border: 'none',
+    background: 'rgba(15,23,42,0.5)',
+    color: '#fff',
+    fontSize: '1.25rem',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backdropFilter: 'blur(4px)',
+    flexShrink: 0,
+  })
 
-    const slideStyles = {
-        width: '100%',
-        height: '100%',
-        borderRadius: '10px',
-        backgroundSize: 'cover',
-        backgroundImage: `url(${projects_fotos[currentIndex]})`,
-    };
+  return (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', gap: '12px' }}>
 
-    const getSlidesStylesWithBackground = (slideIndex) => ({
-        ...slideStyles,
-        //backgroundImage: `url(${projects_fotos[slideIndex]})`,
-    });
+      {/* Slide track */}
+      <div style={{ flex: 1, position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
 
-    
-    const leftArrowStyles = {
-        position: 'absolute',
-        top: '50%',
-        transform: 'translate(0, -50%)',
-        left: '32px',
-        fontSize: '45px',
-        color: '#A52A2A',
-        zIndex: 1,
-        cursor: 'pointer'
-    };
-    
-    const rightArrowStyles = {
-        position: 'absolute',
-        top: '50%',
-        transform: 'translate(0, -50%)',
-        right: '32px',
-        fontSize: '45px',
-        color: '#A52A2A',
-        zIndex: 1,
-        cursor: 'pointer'
-    };
-    
-
-    const goToPrevious = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? projects_fotos.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    };
-
-    const goToNext = useCallback(() => {
-        const isLastSlide = currentIndex === projects_fotos.length - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-    }, [currentIndex, projects_fotos]);
-    
-
-    
-    const dotsContainerStyles = {
-        display: 'flex',
-        justifyContent: 'center',
-        transform: 'translate(0, -100%)',
-        marginTop: '35px'
-    };
-    
-    const dotStyles = {
-        margin: '5px 3px',
-        cursor: 'pointer',
-        fontSize: '15px',
-        color: '#A52A2A',
-    };
-    
-    const padding_link = {
-        fontSize: 20,
-        textDecoration: "none",
-        fontWeight: 'bold',
-    }
-
-    const view_project_style = {
-        position: 'absolute',
-        padding: '7px',
-        transform: 'translate(0, -35%)',
-        color: 'white',
-        zIndex: 1,
-        cursor: 'pointer',
-        border: 'solid white 2px',
-        borderRadius: '10px',
-        backgroundColor: '#A52A2A',
-        width: '100px'
-
-    };
-
-    const center_view_project_style = {
-        display: 'flex',
-        justifyContent: 'center',
-        //position: 'absolute',
-        //left: '45%',
-        marginTop: '-35px',
-        textAlign: 'center',
-      }
-
-    const goToSlide = slideIndex => {
-        setCurrentIndex(slideIndex)
-    };
-    
-
-    const slidesContainerOverflowStyles = {
-        overflow: 'hidden',
-        height: '100%'
-    }
-
-    
-    useEffect(() => {
-        if (timeRef.current) {
-            clearTimeout(timeRef.current)
-        }
-        timeRef.current = setTimeout(() => {
-            goToNext();
-        }, 5000);
-
-        return () => clearTimeout(timeRef.current)
-    }, [goToNext]);
-    
-
-    return (
-
-
-        <div style={sliderStyles}>
-
-            <div style={leftArrowStyles} onClick={goToPrevious}> ❮ </div>
-            <div style={rightArrowStyles} onClick={goToNext}> ❯ </div>
-
-            <div style={slidesContainerOverflowStyles}>
-
-            <Link style={padding_link} to={`/projects/${currentIndex + 1}`}>
-
-                <div style={getSlidesContainerStylesWithWidth()}>
-                    {projects_fotos.map((_, slideIndex) => (
-                        <div key={slideIndex} style={getSlidesStylesWithBackground(slideIndex)}> </div>
-                    ))}
-                </div>
-
-                <div style={center_view_project_style}>
-                    <div style={view_project_style}>
-                        More info
-                    </div>
-                </div>
-
-            </Link>
-
-            </div>
-
-            <div style={dotsContainerStyles}>
-                {projects_fotos.map((slide, slideIndex) => (
-                <div key={slideIndex} style={dotStyles} onClick={() => goToSlide(slideIndex)} >⬤</div> 
-                )
-                )}
-            </div>
-
+        <div style={{
+          display: 'flex',
+          height: '100%',
+          transform: `translateX(${-currentIndex * 100}%)`,
+          transition: 'transform 0.8s ease-in-out',
+        }}>
+          {projects_fotos.map((foto, i) => (
+            <div
+              key={i}
+              style={{
+                flex: '0 0 100%',
+                height: '100%',
+                backgroundImage: `url(${foto})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          ))}
         </div>
-    )
 
+        <button onClick={goToPrevious} style={arrowStyle('left')} aria-label="Previous">‹</button>
+        <button onClick={goToNext}     style={arrowStyle('right')} aria-label="Next">›</button>
+
+        <Link
+          to={`/projects/${currentIndex + 1}`}
+          style={{
+            position: 'absolute',
+            bottom: '1.25rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 2,
+            padding: '0.45rem 1.25rem',
+            background: '#2563eb',
+            color: '#fff',
+            borderRadius: '9999px',
+            fontWeight: 600,
+            fontSize: '0.875rem',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          View project →
+        </Link>
+      </div>
+
+      {/* Dots */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
+        {projects_fotos.map((_, i) => (
+          <button
+            key={i === currentIndex ? `active-${currentIndex}` : `dot-${i}`}
+            onClick={() => goToSlide(i)}
+            className={`slider-dot ${i === currentIndex ? 'slider-dot-active' : 'slider-dot-inactive'}`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+    </div>
+  )
 }
 
 export default ImageSlider

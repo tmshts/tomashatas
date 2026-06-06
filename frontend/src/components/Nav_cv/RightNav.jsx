@@ -2,88 +2,84 @@ import styled from 'styled-components'
 
 
 const Ul = styled.ul`
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.125rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 
-    li {
-        color: white;
-        cursor: pointer;
-        padding: 0px 30px;
-    }
-
-    @media (max-width: 768px) {
-        flex-flow: column nowrap;
-        background-color: #eee0b9;
-        position: fixed;
-        margin-top: 0px;
-        transform: ${({open}) => open ? 'translateX(0)' : 'translateX(100%)'};
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 200px;
-        z-index: 9;
-        padding-top: 3.5rem;
-        transition: transform 0.3s ease-in-out;
-
-        .link_section_cv {
-            cursor: pointer;
-            padding: 20px 20px 0 0;
-        }
-    }
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    background-color: #0f172a;
+    position: fixed;
+    margin-top: 0;
+    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 220px;
+    z-index: 9;
+    padding: 5rem 1.25rem 2rem;
+    transition: transform 0.3s ease-in-out;
+    gap: 0.25rem;
+  }
 `
 
-const RightNav = ({ open, personal_details_ref, portfolio_ref, certificates_ref, work_experience_ref,
-    education_ref, aptitudes_ref, languages_ref }) => {
+const Item = styled.div`
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    background: #dbeafe;
+    color: #2563eb;
+  }
+
+  @media (max-width: 768px) {
+    color: rgba(255,255,255,0.75);
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.625rem 1rem;
+
+    &:hover {
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+    }
+  }
+`
 
 
-    return (
-            <Ul open={open}>
+const RightNav = ({
+  open,
+  personal_details_ref,
+  portfolio_ref,
+  certificates_ref,
+  work_experience_ref,
+  education_ref,
+  aptitudes_ref,
+  languages_ref,
+}) => {
+  const scrollTo = ref => ref.current.scrollIntoView({ behavior: 'smooth' })
 
-                <div className='link_section_cv' onClick={() => personal_details_ref.current.scrollIntoView({
-                    behavior: 'smooth'
-                })}>
-                    <b>Personal Details</b>
-                </div>
-
-                <div className='link_section_cv' onClick={() => portfolio_ref.current.scrollIntoView({
-                    behavior: 'smooth',
-                })}>
-                    <b>Portfolio</b>
-                </div>
-
-                <div className='link_section_cv' onClick={() => certificates_ref.current.scrollIntoView({
-                    behavior: 'smooth',
-                })}>
-                    <b>Certificates</b>
-                </div>
-
-                <div className='link_section_cv' onClick={() => work_experience_ref.current.scrollIntoView({
-                    behavior: 'smooth'
-                })}>
-                    <b>Work Experience</b>
-                </div>
-
-                <div className='link_section_cv' onClick={() => education_ref.current.scrollIntoView({
-                    behavior: 'smooth'
-                })}>
-                    <b>Education</b>
-                </div>
-
-                <div className='link_section_cv' onClick={() => aptitudes_ref.current.scrollIntoView({
-                    behavior: 'smooth'
-                })}>
-                    <b>Aptitudes</b>
-                </div>
-
-                <div className='link_section_cv' onClick={() => languages_ref.current.scrollIntoView({
-                    behavior: 'smooth'
-                })}>
-                    <b>Languages</b>
-                </div>
-
-            </Ul>
-    )
+  return (
+    <Ul open={open}>
+      <Item onClick={() => scrollTo(personal_details_ref)}>Personal Details</Item>
+      <Item onClick={() => scrollTo(portfolio_ref)}>Portfolio</Item>
+      <Item onClick={() => scrollTo(certificates_ref)}>Certificates</Item>
+      <Item onClick={() => scrollTo(work_experience_ref)}>Work Experience</Item>
+      <Item onClick={() => scrollTo(education_ref)}>Education</Item>
+      <Item onClick={() => scrollTo(aptitudes_ref)}>Aptitudes</Item>
+      <Item onClick={() => scrollTo(languages_ref)}>Languages</Item>
+    </Ul>
+  )
 }
 
 export default RightNav

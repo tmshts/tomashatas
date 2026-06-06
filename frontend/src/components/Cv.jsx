@@ -13,284 +13,255 @@ import cs50w from '../assets/CS50W.png'
 import toefl from '../assets/toefl.jpg'
 import testdaf from '../assets/testdaf.jpg'
 
-import { useRef } from 'react';
-
+import { useRef } from 'react'
 import ScrollToTop from './ScrollToTop'
 import Navbar from './Nav_cv/Navbar'
 
 
-
 const Cv = ({ jobs, education }) => {
+  const personal_details_ref = useRef(null)
+  const portfolio_ref = useRef(null)
+  const certificates_ref = useRef(null)
+  const work_experience_ref = useRef(null)
+  const education_ref = useRef(null)
+  const aptitudes_ref = useRef(null)
+  const languages_ref = useRef(null)
 
-      // props drilling - bad approach
-    const personal_details_ref = useRef(null);
-    const portfolio_ref = useRef(null);
-    const certificates_ref = useRef(null);
-    const work_experience_ref = useRef(null);
-    const education_ref = useRef(null);
-    const aptitudes_ref = useRef(null);
-    const languages_ref = useRef(null);
+  const strategicSkills = [
+    'Digital Transformation', 'AI Strategy Consulting', 'Technology Roadmapping',
+    'Client Engagement', 'Presentation', 'Workshop Facilitation',
+    'Market Analysis', 'Process Optimization', 'Fintech', 'Blockchain Advisory',
+  ]
 
-    return (
-    
-        <>
+  const technicalSkills = [
+    'Python', 'Java', 'JavaScript', 'React', 'HTML', 'CSS', 'Material UI',
+    'NodeJS', 'Express', 'REST API', 'Postman', 'Django', 'AJAX', 'jQuery',
+    'SQL', 'PostgreSQL', 'MongoDB', 'SPARQL', 'Git', 'Bitbucket', 'Docker',
+    'UML', 'LaTeX', 'Visual Studio Code', 'Cypress', 'Unit Testing',
+    'AWS', 'GenAI', 'LLM', 'Databricks', 'dbt', 'Dagster', 'Jenkins',
+    'BPMN', 'Signavio', 'Celonis', 'Sparx Enterprise Architect',
+  ]
 
-            <Navbar personal_details_ref={personal_details_ref} portfolio_ref={portfolio_ref}
-            certificates_ref={certificates_ref} work_experience_ref={work_experience_ref}
-            education_ref={education_ref} aptitudes_ref={aptitudes_ref}
-            languages_ref={languages_ref} />
+  const softSkills = [
+    'Leadership', 'Cross-Functional Collaboration', 'Negotiation', 'Public Speaking',
+  ]
 
-            <div className='cv'>
-                    <div ref={personal_details_ref} id='personal_details'>
+  return (
+    <>
+      <Navbar
+        personal_details_ref={personal_details_ref}
+        portfolio_ref={portfolio_ref}
+        certificates_ref={certificates_ref}
+        work_experience_ref={work_experience_ref}
+        education_ref={education_ref}
+        aptitudes_ref={aptitudes_ref}
+        languages_ref={languages_ref}
+      />
 
-                        <div id='intro_wrapper'>
+      <div className="cv-page">
 
-                            <div id='intro_first'>
-                                    <p><b>Name:</b></p>
-                                    <p><b>Email:</b></p>
-                            </div>
+        {/* Personal Details */}
+        <div ref={personal_details_ref} className="cv-header">
+          <div className="cv-header-info">
+            <h1>Tomas Hatas</h1>
+            <p className="cv-header-email">tomhatas@gmail.com</p>
+          </div>
+          <img src={main_picture} className="cv-photo" alt="Tomas Hatas" />
+        </div>
 
-                            <div id='intro_second'>
-                                <p>Tomas Hatas</p>
-                                <p>tomhatas@gmail.com</p>
-                            </div>
-                        </div>
+        {/* Motto */}
+        <blockquote className="cv-motto">
+          Strategic advisor translating emerging technologies to drive business growth, operational
+          efficiency, and digital transformation. Experienced in leading cross-functional teams
+          and advising stakeholders.
+        </blockquote>
 
-                        <div className='main_picture_div'>
-                            <div className='main_picture_div_child'>
-                                <img src={main_picture} className='main_picture' alt='main_picture_tomas_hatas'/>
-                            </div>
-                        </div>
+        {/* Portfolio */}
+        <div ref={portfolio_ref} className="cv-section">
+          <h2 className="cv-section-title">Portfolio</h2>
+          <a
+            href="https://github.com/tmshts"
+            className="portfolio-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/tmshts
+          </a>
+        </div>
 
-                    </div>
-            
-                    <hr className='hr_cv' />
+        {/* Certificates */}
+        <div ref={certificates_ref} className="cv-section">
+          <h2 className="cv-section-title">Certificates</h2>
+          <div className="cert-list">
 
-                    <div className='motto'>
-                        Strategic advisor translating emerging technologies to drive business growth, operational efficiency, and
-                        digital transformation. Experienced in leading cross-functional team and advising stakeholders.
-                    </div>
-
-                <hr className='hr_cv' />
-
-                    <h2 ref={portfolio_ref} >My Portfolio</h2>
-
-                    <p>
-                        <b>Programming: </b>
-                        <a href="https://github.com/tmshts" className='a_style' target="_blank" rel="noopener noreferrer">https://github.com/tmshts</a>
-                    </p>
-                    
-
-                <hr className='hr_cv' />
-
-                    <h2 ref={certificates_ref} >Certificates</h2>
-
-                        <div className='line_height'>
-                            <b>AWS Certified Solutions Architect – Associate</b>
-                        </div>
-                        <p>
-                            <i>More info about the certificate:</i><span> </span>
-                            <a href="https://www.credly.com/badges/a3b75745-65ab-4796-b71f-08a54b4eb5ba/public_url" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
-                        </p>
-                        
-                        <img src={aws} className='certificate_badge' alt='aws'/>
-
-                        <br></br>
-                        <br></br>
-
-                        <div className='line_height'>
-                            <b>HashiCorp Certified: Terraform Associate (003)</b>
-                        </div>
-                        <p>
-                            <i>More info about the certificate:</i><span> </span>
-                            <a href="https://www.credly.com/badges/11c5fcd5-8673-44e5-8fbf-0d8721c3be29/public_url" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
-                        </p>
-                        
-                        <img src={terraform} className='certificate_badge' alt='terraform'/>
-
-                        <br></br>
-                        <br></br>
-
-                        <div className='line_height'>
-                            <b>Full Stack Open from University of Helsinki </b> (React, Redux, React Router, Node.js, Express, REST API, MongoDB)
-                        </div>
-                        <p>
-                            <i>More info about the certificate:</i><span> </span>
-                            <a href="https://fullstackopen.com/en/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
-                        </p>
-                        
-                        <img src={fullstack} className='certificate' alt='fullstack'/>
-
-                        <br></br>
-                        <br></br>
-
-                        <div className='line_height'>
-                            <b>CI/CD from University of Helsinki </b> (Branches, Pull Request, Continuous Integration, Continuous Deployment, GitHub Actions, Workflow, Versioning, Periodic health check)
-                        </div>
-                        <p>
-                            <i>More info about the certificate:</i><span> </span>
-                            <a href="https://fullstackopen.com/en/part11/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
-                        </p>
-                        
-                        <img src={fullstack_cicd} className='certificate' alt='fullstack_cicd'/>
-
-                        <br></br>
-                        <br></br>
-
-                        <div className='line_height'>
-                            <b>Containers from University of Helsinki </b> (Images, Containers, Docker, Docker Network, Dockerfile, Docker Compose, Nginx, Mongo, Redis)
-                        </div>
-                        <p>
-                            <i>More info about the certificate:</i><span> </span>
-                            <a href="https://fullstackopen.com/en/part12/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
-                        </p>
-                        
-                        <img src={fullstack_containers} className='certificate' alt='fullstack_containers'/>
-
-                        <br></br>
-                        
-                        <p className='line_height'>
-                            <b>CS50’s Web Programming with Python and JavaScript from Harvard</b> (Django)
-                        </p>
-                        <p>
-                            <i>More info about the certificate:</i><span> </span>
-                            <a href="https://cs50.harvard.edu/web/2020/" className='a_style' target="_blank" rel="noopener noreferrer"><i>here</i></a>.
-                        </p>
-
-                        <img src={cs50w} className='certificate' alt='cs50w'/>
-
-
-                <hr className='hr_cv' />
-
-                    <h2 ref={work_experience_ref} >Work experience</h2>
-
-                    <Job jobs={jobs} />
-
-                <hr className='hr_cv' />
-
-                    <h2 ref={education_ref} >Education</h2>
-
-                    <Education education={education} />
-
-                <hr className='hr_cv' />
-
-                    <h2 ref={aptitudes_ref} >Aptitudes</h2>
-
-                    <h3>Strategic</h3>
-
-                        <ul className="list_aptitudes">
-
-                            <li>Digital Transformation</li>
-                            <li>AI Strategy Consulting</li>
-                            <li>Technology Roadmapping</li>                            
-                            <li>Client Engagement</li>
-                            <li>Presentation</li>
-                            <li>Workshop Facilitation</li>
-                            <li>Market Analysis</li>
-                            <li>Process Optimization</li>
-                            <li>Fintech</li>
-                            <li>Blockchain Advisory</li>
-
-                        </ul>
-
-                    <h3>Technical</h3>
-
-                        <ul className="list_aptitudes">
-                            <li>Python</li>
-                            <li>Java</li>
-
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Material UI</li>
-                            <li>NodeJS</li>
-                            <li>Express</li>
-                            <li>REST API</li>
-                            <li>Postman</li>
-                            <li>Django</li>
-                            <li>AJAX</li>
-                            <li>jQuery</li>
-                            <li>SQL</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-
-                            <li>SPARQL</li>
-                            <li>Git</li>
-                            <li>Bitbucket</li>
-                            <li>Docker</li>
-                            <li>UML</li>
-                            <li>LaTeX</li>
-                            <li>Visual Studio Code</li>
-                            <li>Cypress</li>
-                            <li>Unit Testing</li>
-
-                            <li>AWS</li>
-                            <li>GenAI</li>
-                            <li>LLM</li>
-                            <li>Databricks</li>
-                            <li>dbt</li>
-                            <li>Dagster</li>
-                            <li>Jenkins</li>
-                            <li>BPMN</li>
-                            <li>Signavio</li>
-                            <li>Celonis</li>
-                            <li>Sparx Enterprise Architect</li>
-                            
-                        </ul>
-
-
-                    <h3>Soft</h3>
-
-                        <ul className="list_aptitudes">
-
-                            <li>Leadership</li>
-                            <li>Cross-Functional Collaboration</li>
-                            <li>Negotiation</li>
-                            <li>Public Speaking</li>
-
-                        </ul>
-
-
-                <hr className='hr_cv' />
-
-                    <h2 ref={languages_ref} >Foreign languages</h2>
-                    
-                    <ul className="list_languages">
-                        <li>Czech (mother tongue)</li>
-                        <li>German (Advanced)</li>
-                    </ul>  
-                    <img src={testdaf} className='certificate' alt='testdaf'/>
-
-                    <ul className="list_languages">
-                        <li>English (Advanced)</li>
-                    </ul>
-                    <img src={toefl} className='certificate' alt='toefl'/>
-                    
-                    <ul className="list_languages">
-                        <li>Spanish (Advanced)</li>
-                        <li>Italian (Basic)</li>
-                    </ul>
-
+            <div className="cert-item">
+              <img src={aws} className="cert-badge" alt="AWS" />
+              <div className="cert-info">
+                <h3>AWS Certified Solutions Architect – Associate</h3>
+                <p>
+                  <a href="https://www.credly.com/badges/a3b75745-65ab-4796-b71f-08a54b4eb5ba/public_url" target="_blank" rel="noopener noreferrer">
+                    View certificate on Credly →
+                  </a>
+                </p>
+              </div>
             </div>
 
-            <ScrollToTop />
+            <div className="cert-item">
+              <img src={terraform} className="cert-badge" alt="Terraform" />
+              <div className="cert-info">
+                <h3>HashiCorp Certified: Terraform Associate (003)</h3>
+                <p>
+                  <a href="https://www.credly.com/badges/11c5fcd5-8673-44e5-8fbf-0d8721c3be29/public_url" target="_blank" rel="noopener noreferrer">
+                    View certificate on Credly →
+                  </a>
+                </p>
+              </div>
+            </div>
 
-        </>
+            <div className="cert-item">
+              <div className="cert-info">
+                <h3>Full Stack Open — University of Helsinki</h3>
+                <p>React, Redux, React Router, Node.js, Express, REST API, MongoDB</p>
+                <p>
+                  <a href="https://fullstackopen.com/en/" target="_blank" rel="noopener noreferrer">
+                    fullstackopen.com →
+                  </a>
+                </p>
+                <img src={fullstack} className="cert-wide-img" alt="Full Stack Open certificate" />
+              </div>
+            </div>
 
-    )
+            <div className="cert-item">
+              <div className="cert-info">
+                <h3>CI/CD — University of Helsinki</h3>
+                <p>GitHub Actions, Continuous Integration, Continuous Deployment, Versioning</p>
+                <p>
+                  <a href="https://fullstackopen.com/en/part11/" target="_blank" rel="noopener noreferrer">
+                    View course →
+                  </a>
+                </p>
+                <img src={fullstack_cicd} className="cert-wide-img" alt="CI/CD certificate" />
+              </div>
+            </div>
+
+            <div className="cert-item">
+              <div className="cert-info">
+                <h3>Containers — University of Helsinki</h3>
+                <p>Docker, Docker Compose, Nginx, Mongo, Redis</p>
+                <p>
+                  <a href="https://fullstackopen.com/en/part12/" target="_blank" rel="noopener noreferrer">
+                    View course →
+                  </a>
+                </p>
+                <img src={fullstack_containers} className="cert-wide-img" alt="Containers certificate" />
+              </div>
+            </div>
+
+            <div className="cert-item">
+              <div className="cert-info">
+                <h3>CS50&apos;s Web Programming with Python and JavaScript — Harvard</h3>
+                <p>Django, JavaScript, SQL</p>
+                <p>
+                  <a href="https://cs50.harvard.edu/web/2020/" target="_blank" rel="noopener noreferrer">
+                    cs50.harvard.edu →
+                  </a>
+                </p>
+                <img src={cs50w} className="cert-wide-img" alt="CS50W certificate" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Work Experience */}
+        <div ref={work_experience_ref} className="cv-section">
+          <h2 className="cv-section-title">Work Experience</h2>
+          <Job jobs={jobs} />
+        </div>
+
+        {/* Education */}
+        <div ref={education_ref} className="cv-section">
+          <h2 className="cv-section-title">Education</h2>
+          <Education education={education} />
+        </div>
+
+        {/* Aptitudes */}
+        <div ref={aptitudes_ref} className="cv-section">
+          <h2 className="cv-section-title">Aptitudes</h2>
+
+          <div className="skills-group">
+            <p className="skills-group-label">Strategic</p>
+            <div className="skill-tags">
+              {strategicSkills.map(skill => (
+                <span key={skill} className="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skills-group">
+            <p className="skills-group-label">Technical</p>
+            <div className="skill-tags">
+              {technicalSkills.map(skill => (
+                <span key={skill} className="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skills-group">
+            <p className="skills-group-label">Soft Skills</p>
+            <div className="skill-tags">
+              {softSkills.map(skill => (
+                <span key={skill} className="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Languages */}
+        <div ref={languages_ref} className="cv-section">
+          <h2 className="cv-section-title">Foreign Languages</h2>
+
+          <div className="language-list">
+            <div className="language-item">
+              <span className="language-name">Czech</span>
+              <span className="language-level">Mother tongue</span>
+            </div>
+            <div>
+              <div className="language-item">
+                <span className="language-name">German</span>
+                <span className="language-level">Advanced</span>
+              </div>
+              <img src={testdaf} className="language-cert" alt="TestDaF certificate" />
+            </div>
+            <div>
+              <div className="language-item">
+                <span className="language-name">English</span>
+                <span className="language-level">Advanced</span>
+              </div>
+              <img src={toefl} className="language-cert" alt="TOEFL certificate" />
+            </div>
+            <div className="language-item">
+              <span className="language-name">Spanish</span>
+              <span className="language-level">Advanced</span>
+            </div>
+            <div className="language-item">
+              <span className="language-name">Italian</span>
+              <span className="language-level">Basic</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <ScrollToTop />
+    </>
+  )
 }
 
 export default Cv
 
 
 Cv.propTypes = {
-    jobs: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.array
-    ]),
-    education: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.array
-    ]),
+  jobs: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  education: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 }
