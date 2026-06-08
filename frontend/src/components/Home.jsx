@@ -29,7 +29,7 @@ const Home = () => {
         <div className="hero-text">
           <p className="hero-greeting">Hello, I&apos;m</p>
           <h1 className="hero-name">Tomas Hatas</h1>
-          <p className="hero-subtitle">Strategic IT Advisor &amp; Full-Stack Developer</p>
+          <p className="hero-subtitle">AI Strategy Advisor | GenAI &amp; Agentic AI Professional</p>
           <p className="hero-tagline">
             An experienced IT and business professional with international experience,
             fluent in multiple languages, and a strong passion for stock market investing.
@@ -99,17 +99,12 @@ const Home = () => {
               rel="noopener noreferrer"
             />
             <SocialIcon
-              url="https://instagram.com/tmshts"
-              target="_blank"
-              rel="noopener noreferrer"
-            />
-            <SocialIcon
               url="https://github.com/tmshts"
               target="_blank"
               rel="noopener noreferrer"
             />
             <SocialIcon
-              url="https://www.youtube.com/@tmshts"
+              url="https://www.youtube.com/@TechAndTomas"
               target="_blank"
               rel="noopener noreferrer"
             />

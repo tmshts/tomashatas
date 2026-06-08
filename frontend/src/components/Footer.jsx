@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="footer-brand">
           <p className="footer-brand-name">Tomas Hatas</p>
           <span className="footer-brand-tagline">
-            Strategic IT Advisor &amp; Full-Stack Developer.
+            AI Strategy Advisor | GenAI &amp; Agentic AI Professional.
           </span>
         </div>
 
