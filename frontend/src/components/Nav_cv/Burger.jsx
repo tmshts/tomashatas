@@ -57,6 +57,7 @@ const Burger = ({
       </StyledBurger>
       <RightNav
         open={open}
+        onNavigate={() => setOpen(false)}
         personal_details_ref={personal_details_ref}
         portfolio_ref={portfolio_ref}
         certificates_ref={certificates_ref}

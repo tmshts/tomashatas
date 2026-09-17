@@ -5,7 +5,8 @@ import Education from './Education'
 
 import main_picture from '../assets/main_picture.jpeg'
 import fullstack from '../assets/fullstack.png'
-import aws from '../assets/aws.png'
+import aws_developer from '../assets/aws_developer.png'
+import aws_solution from '../assets/aws_solution.png'
 import terraform from '../assets/terraform.png'
 import fullstack_cicd from '../assets/fullstack_cicd.png'
 import fullstack_containers from '../assets/fullstack_containers.png'
@@ -95,7 +96,19 @@ const Cv = ({ jobs, education }) => {
           <div className="cert-list">
 
             <div className="cert-item">
-              <img src={aws} className="cert-badge" alt="AWS" />
+              <img src={aws_developer} className="cert-badge" alt="AWS Generative AI Developer - Professional" />
+              <div className="cert-info">
+                <h3>AWS Certified Generative AI Developer - Professional</h3>
+                <p>
+                  <a href="https://www.credly.com/badges/e41aaf98-ba31-416d-9857-676e8ea8cb69/public_url" target="_blank" rel="noopener noreferrer">
+                    View certificate on Credly →
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="cert-item">
+              <img src={aws_solution} className="cert-badge" alt="AWS Solution Architect" />
               <div className="cert-info">
                 <h3>AWS Certified Solutions Architect – Associate</h3>
                 <p>

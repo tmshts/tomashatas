@@ -59,6 +59,7 @@ const Item = styled.div`
 
 const RightNav = ({
   open,
+  onNavigate,
   personal_details_ref,
   portfolio_ref,
   certificates_ref,
@@ -67,7 +68,10 @@ const RightNav = ({
   aptitudes_ref,
   languages_ref,
 }) => {
-  const scrollTo = ref => ref.current.scrollIntoView({ behavior: 'smooth' })
+  const scrollTo = ref => {
+    ref.current.scrollIntoView({ behavior: 'smooth' })
+    onNavigate()
+  }
 
   return (
     <Ul open={open}>

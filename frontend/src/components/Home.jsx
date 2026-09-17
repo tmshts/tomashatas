@@ -27,7 +27,6 @@ const Home = () => {
       {/* Hero */}
       <section className="hero">
         <div className="hero-text">
-          <p className="hero-greeting">Hello, I&apos;m</p>
           <h1 className="hero-name">Tomas Hatas</h1>
           <p className="hero-subtitle">AI Strategy Advisor | GenAI &amp; Agentic AI Professional</p>
           <p className="hero-tagline">
